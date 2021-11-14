@@ -1,0 +1,71 @@
+index page
+
+2 buttons- STAFF AND CUSTOMER
+
+
+CUSTOMER-->
+
+	CUSTOMER ORDER PAGE 
+		
+		-WELCOME AT THE TOP
+		-Show items 
+			(TABLE W/ ITEMS)
+		-Prompt for Name, contact #, address, item and quantity
+			(form for ^^)
+			-SUBMIT BUTTON
+			
+
+STAFF-->
+	staff login PAGE
+		-DROPDOWNMENU: ADMIN, CASHIER 
+		-input name and passwORd (INPUT FIELD)
+		
+	if ADMIN LOGS IN
+	
+		-LOGO AND WELCOME *ADMIN NAME* PAGE
+		-to the left we will have the manage stock,manage ordeR, generate financial report.
+			
+		IF MANAGE STOCK gets clicked 
+			-database of stock will come up and under it the "add stock, update stock, PLACE ORDER, GENERATE RECEIPT" buttons will display
+			-depending on the buttons;
+				- looks like "New/Add User"
+				-name, quantity and price of item
+				-button to submit 
+				
+		IF VIEW SCHEDULE
+			-TABLE-
+				NAME- ADRESS - # - DELIVERY DATE
+				GRACE-DUNG D ROAD- 876- SUNDAY SEP
+			-FAR RIGHT BUTTONS-
+				PRINT
+				DELETE
+				EDIT AND SAVE
+				MOVE
+		IF GEN. FINAN. REPORT
+			-I S
+			
+			
+	if CASHIER LOGS IN
+		-LOGO AND WELCOME *ADMIN NAME* PAGE
+			-LOOK LIKE NEW USER
+			-LEFT SIDE:
+				-PLACE ORDER section
+					-QUANTITY, PRICE 
+					
+				-GENERATE RECEIPT section
+					-TAKES ORDER #
+					-SUBMIT
+						-SHOW THE ORDER INFORMATION
+						-2BUTT- PROCEED & CANCEL
+						-IF proceed --> print
+						-IF cancel --> back to the takes order# and submit page
+				-VIEW SCHEDULE
+					-TABLE-
+						NAME- ADRESS - # - DELIVERY DATE
+						GRACE-DUNG D ROAD- 876- SUNDAY SEP
+					-FAR RIGHT BUTTONS-
+						PRINT
+						DELETE
+						EDIT AND SAVE
+						MOVE
+
