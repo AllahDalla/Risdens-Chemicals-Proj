@@ -1,0 +1,15 @@
+-Index Page
+    -Ramona Stanberry
+    -Some voluntary help needed
+
+-Customer
+    -Daniel Richardson 
+    -Shereka Simmonds
+
+-Admin Dashboard
+    -Al-Romario Davis
+    -Tyreke Mclean
+    -Davaskye DeBique
+
+-Backend -php
+    -TBA
