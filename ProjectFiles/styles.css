@@ -1,1 +1,119 @@
 /* This is where a webpage is going to be styled */
+html{
+    background: #90DBE5;
+}
+
+
+/* Rectangle 1 */
+
+#MONA_box{
+    position: absolute;
+    left: 21.46%;
+    right: 21.46%;
+    top: 24.22%;
+    bottom: 21.09%;
+
+    background: #7AECE5;
+    border: 4px solid #000000;
+    box-shadow: 19px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 47px;
+}
+
+/* Line 1 */
+
+#MONA_line{
+    position: absolute;
+    width: 242px;
+    height: 0px;
+    /* left: 410px; */
+    left: 37.5%;
+    /* top: 300px; */
+    top: 55%;
+
+    border: 2px solid #000000;
+    background:black;
+    transform: rotate(90deg);
+
+    
+}
+
+/* CUSTOMER */
+
+#MONA_CUS_btn{
+    position: absolute;
+    /* width: 228px; */
+    width: 20%;
+    height: 60px;
+
+    left: 23.82%;
+    right: 52.78%;
+    top: 45.02%;
+    bottom: 48.44%;
+
+    background: #4B7DDF;
+    border-style: solid;
+    border-radius: 19px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    /* line-height: 28px; */
+    text-align: center;
+    letter-spacing: 0.105em;
+
+    color: #FFFFFF;
+}
+
+
+/* STAFF */
+
+#MONA_STAFF_btn{
+    position: absolute;
+    /* width: 228px; */
+    width: 20%;
+    height: 60px;
+
+    left: 52.78%;
+    right: 23.82%;
+    top: 45.02%;
+    bottom: 48.44%;
+    
+    background: #4B7DDF;
+    border-style: solid;
+    border-radius: 19px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    /* line-height: 28px; */
+    text-align: center;
+    letter-spacing: 0.105em;
+
+    color: #FFFFFF;
+}
+    
+
+/* WHO ARE YOU ? */
+
+.MONA_title {
+    position: absolute; 
+    width: 608px;
+    height: 68px;
+    /* left: 230px; */
+    left: 21%;
+    top: 10px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: 0.105em;
+
+    color: #000000;
+    
+}
+    
