@@ -11,7 +11,8 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 
     <!-- HTML for main area of manage stock starts here -->
 
-    <div id="main">
+    <div id="main-info">
+      <h1>RISDEN'S CHEMICALS STOCK DATABASE</h1>
       <table>
         <th>
           <tr>
@@ -36,7 +37,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
         <button id="place-order-btn">Place Order</button>
       </div>
       <!-- This is where the things will come up when each button is clicked -->
-      <div id="stock-result"></div>
+      <div id="result-area"></div>
     </div>
 
     <?php
