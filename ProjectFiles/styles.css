@@ -1,7 +1,7 @@
 /* This is where a webpage is going to be styled */
-/* This is where a webpage is going to be styled */
+
 html {
-  height: 100%;
+  /* height: 100%; */
 }
 
 body {
@@ -9,13 +9,40 @@ body {
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: 10% 90%;
-  height: 100%;
+  height: 100vh;
   margin: auto;
 }
 
-#stock-result {
+.main-area {
   grid-column-start: 2;
   grid-row-start: 2;
+  border: 2px solid orange;
+  text-align: center;
+}
+
+#main-info {
+  border: 2px solid green;
+  margin: 0% 2.5%;
+}
+
+table {
+  border: 0.2em solid black;
+  width: 95%;
+  margin: 0% 2.5%;
+  padding-top: 2em;
+}
+
+tr,
+td,
+thead {
+  text-align: center;
+  border: 0.2em solid #d3d3d3;
+}
+
+#result-area {
+  height: 50px;
+  width: 100%;
+  border: 1px solid blue;
 }
 
 .header {
@@ -40,7 +67,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #d3d3d3;
-  grid-row: 2;
   padding: 15px;
 }
 
@@ -302,27 +328,7 @@ select {
 /*Detailed Issue Code End*/
 
 /*table on homescreen*/
-table {
-  border-collapse: collapse;
-  width: 100%;
-  padding-top: 2em;
-  float: center;
-}
-table td,
-th {
-  border: 2px solid #ddd;
-  padding: 10px;
-}
 
-table td {
-  padding-top: 2em;
-}
 #result {
   padding-top: 10px;
-}
-
-tr,
-th {
-  border: 0;
-  text-align: center;
 }
