@@ -13,7 +13,7 @@ body {
   margin: auto;
 }
 
-#result {
+#stock-result {
   grid-column-start: 2;
   grid-row-start: 2;
 }
