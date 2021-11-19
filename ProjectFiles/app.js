@@ -16,7 +16,7 @@
 // Starting the real coding for pages here
 
 
-// This right here runs the entire scipt on FontFaceSetLoadEvent. All functions made will be called inside this function
+// This right here runs the entire script. All functions made will be called inside this function
 window.onload = function(){
     buttonFucntions()
     alert("Click a sidebar button and see what it does. Analyze code. This is the format we are using. Works well as you can see")
