@@ -420,7 +420,14 @@ grid-gap: 10px;
 display: grid;
 grid-template-columns: 70% 30%;
 }
+#title_box{
+  position: top;
+  width: 1440px;
+  height: 120px;
+  left: 0px;
+  top: 0px;
 
+<<<<<<< HEAD
 #bodymain {
 grid-column: 1;
 padding: 20px;
@@ -446,8 +453,37 @@ margin-top: 20px;
 
 #asidemain label {
 font-weight: bold;
+=======
+  background: #5FA5F8;
+
+}
+.center{
+  margin-left: auto;
+  margin-right: auto;
 }
 
+#products{
+ font-family: Roboto;
+ width: 100%;
+ position: absolute;
+ left: 7.85%;
+ right: 7.36%;
+ top: 17.87%;
+ bottom: 33.01%;
+
+ background: #FFFFFF;
+ border-collapse: collapse;
+ border: 3px solid #000000;
+ box-sizing: border-box;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+>>>>>>> adbadecdcf5f368a99fdec31b7c90ec3cf6c853d
+}
+#products td, #customer th{
+  border: 1px solid black;
+  padding: 8px
+
+<<<<<<< HEAD
 #aside label {
 margin-left: 10px;
 }
@@ -526,4 +562,20 @@ tr,
 th {
 border: 0;
 text-align: center;
+=======
+}
+#products th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+#input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+>>>>>>> adbadecdcf5f368a99fdec31b7c90ec3cf6c853d
 }
