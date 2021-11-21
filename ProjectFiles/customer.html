@@ -7,16 +7,11 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Customer Order Page</title>
   </head>
-  <body>
-    <div id="box">
-      <p>WELCOME TO RISDEN'S CHEMICAL</p>
-      <style>
-          table,th,tr,td{
-              border: 1px solid black;
-              border-collapse: collapse;
-          }
-      </style>
-      <table>
+  <body >
+      <div id= title_box>
+      <p class="cus_title">WELCOME TO RISDEN'S CHEMICALS</p>
+      </div>
+      <table id="products";table border = 2>
           <tr>
               <th> NAME</th>
               <th> PRICE</th>
@@ -25,8 +20,10 @@
           <tr>
               <td> Bleach </td>   
               <td> 100 </td>
+              <td>     </td>
             </tr>
       </table>
+      <div id="cus_info">
       <form customer="/customer_page.php">
           <label for="cname">Name:</label><br>
           <input type="text" id="cname" name="cname"><br> 
@@ -35,10 +32,10 @@
           <label for="caddress">Address:</label><br>
           <input type="text" id="caddress" address="caddress"><br> 
           <label for="ddate">Delivery Date:</label><br>
-          <input type="text" id="ddate" date="ddate"><br> 
+          <input type="date" id="ddate" date="ddate"><br> 
           <input type="submit" value="Submit"><br> 
       </form>
       </div>
-    </div>
+     </div>
   </body>
 </html>
