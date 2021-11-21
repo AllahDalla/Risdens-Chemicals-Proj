@@ -28,3 +28,16 @@ CREATE TABLE `products` (
   `price` int(20) NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Table structure for table `transactions`
+--
+
+DROP TABLE IF EXISTS `transactions`;
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL auto_increment,
+  `order_number` varchar(64) NOT NULL,
+  `product_name` varchar(64) NOT NULL,
+  `price` int(20) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
