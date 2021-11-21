@@ -1,327 +1,48 @@
-/* This is where a webpage is going to be styled */
-html {
-  height: 100%;
+html{
+  background: #90DBE5;
 }
-
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  display: grid;
-  grid-template-columns: 20% 80%;
-  grid-template-rows: 10% 90%;
-  height: 100%;
-  margin: auto;
+.cus_title{
+  background-color: #92a8d1;
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: normal;
+  height: 54px;
+  left: 275px;
+  letter-spacing: 0.105em;
+  line-height: 42px;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  width: 936px;
 }
-
-#result {
-  grid-column-start: 2;
-  grid-row-start: 2;
+table{
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  bottom: 33.01%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  left: 40%;
+  position: absolute;
+  right: 7.36%;
+  top: 19%;  
 }
-
-.header {
-  display: flex;
-  color: #ffffff;
-  background-color: #000000;
-  grid-column: 1 / 3;
-  align-items: center;
-}
-
-.header h1 {
-  margin-left: 20px;
-  font-size: 14px;
-}
-
-.header i {
-  margin-left: 20px;
-  font-size: x-large;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  background-color: #d3d3d3;
-  grid-row: 2;
-  padding: 15px;
-}
-
-.sidebar div {
-  margin-top: 20px;
-}
-
-.sidebar a {
-  text-decoration: none;
-  font-weight: bold;
+form{
   color: #000000;
-}
-
-.body form {
-  margin: 20px;
-}
-
-.body h2 {
-  margin-left: 20px;
-  font-size: 30px;
-}
-
-.body input {
-  background-color: #ededed;
-  border: 1;
-  border-radius: 5px;
-  border-width: thin;
-  margin-top: 10px;
+  font-family: Roboto;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: normal;
+  height: 10px;
+  left: 40%;
+  letter-spacing: 0.105em;
+  line-height: 42px;
+  position: absolute;
+  top: 200px;
   width: 300px;
-  height: 25px;
 }
-
-form label {
-  font-weight: bold;
-  padding-bottom: 10px;
-}
-
-#searchbtn {
-  border: none;
-  border-radius: 5px;
-  background-color: #0c71e0;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: bold;
-  padding: 10px 50px 10px 50px;
-}
-
-/*New User Code End*/
-
-/*Create Issue Code Start*/
-
-#description {
-  background-color: #ededed;
-  border: 1;
-  border-radius: 5px;
-  border-width: thin;
-  margin-top: 10px;
-  width: 300px;
-  height: 100px;
-}
-
-select {
-  background-color: #ededed;
-  border: 1;
-  border-radius: 5px;
-  border-width: thin;
-  margin-top: 10px;
-  width: 308px;
-  height: 30px;
-  font-weight: bold;
-  padding-left: 10px;
-}
-
-/*Create Issue Code End*/
-#open {
-  background-color: #2da562; /* Blue */
-  border: none;
-  color: white;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#inprogress {
-  background-color: #ffdb4d; /* Blue */
-  border: none;
-  color: black;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#closed {
-  background-color: #ff5400; /* Blue */
-  border: none;
-  color: white;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#allissue {
-  background-color: white; /* Blue */
-  border: none;
-  color: black;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#openissue {
-  background-color: white;
-  font-family: "Times New Roman", Times, serif;
-  border: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#ticket {
-  background-color: white;
-  font-family: "Times New Roman", Times, serif;
-  border: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.filterbtns {
-  display: flex;
-  flex-direction: row;
-  grid-gap: 10px;
-}
-
-/*Detailed Issue Code Start*/
-
-.bodygrid {
-  display: grid;
-  grid-template-columns: 70% 30%;
-}
-
-#bodymain {
-  grid-column: 1;
-  padding: 20px;
-}
-
-.bodygrid h2 {
-  font-size: 30px;
-}
-
-#issue {
-  font-size: 10px;
-}
-
-#para {
-  margin-top: 20px;
-  max-width: 800px;
-  text-align: justify;
-}
-
-#dates {
-  margin-top: 20px;
-}
-
-#asidemain label {
-  font-weight: bold;
-}
-
-#aside label {
-  margin-left: 10px;
-}
-
-#asidemain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 13px;
-  grid-column: 2;
-  overflow: hidden;
-}
-#aside p {
-  margin-left: 10px;
-}
-
-#aside {
-  margin-top: 110px;
-  border: 1px;
-  border-style: solid;
-  border-radius: 5px;
-  padding: 10px 0px 30px 0px;
-  height: auto;
-  width: 200px;
-  background-color: #d3d3d3;
-}
-
-#markclosed {
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 0px 10px 0px;
-  width: 200px;
-  color: #ffffff;
-  background-color: #0c71e0;
-  font-weight: bold;
-  float: right;
-}
-
-#markinprog,
-.issueButton {
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 0px 10px 0px;
-  width: 200px;
-  background-color: #4c9a2a;
-  color: #ffffff;
-  font-weight: bold;
-  float: right;
-}
-
-/*Detailed Issue Code End*/
-
-/*table on homescreen*/
-table {
-  border-collapse: collapse;
-  width: 100%;
-  padding-top: 2em;
-  float: center;
-}
-table td,
-th {
-  border: 2px solid #ddd;
-  padding: 10px;
-}
-
-table td {
-  padding-top: 2em;
-}
-#result {
-  padding-top: 10px;
-}
-
-tr,
-th {
-  border: 0;
-  text-align: center;
+input{
+  border: 2px solid #000000;
+  position: absolute;
 }
