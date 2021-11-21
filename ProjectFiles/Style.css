@@ -9,7 +9,7 @@ html{
   font-style: normal;
   font-weight: normal;
   height: 54px;
-  left: 275px;
+  left: 250px;
   letter-spacing: 0.105em;
   line-height: 42px;
   position: absolute;
@@ -19,14 +19,15 @@ html{
 }
 table{
   background: #FFFFFF;
-  border: 3px solid #000000;
+  border: 1px solid #000000;
   bottom: 33.01%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  left: 80%;
+  left: 24%;
   position: absolute;
   right: 7.36%;
-  top: 50%;  
+  top: 19%;  
+  width: 700px;
 }
 form{
   color: #000000;
@@ -35,12 +36,12 @@ form{
   font-style: normal;
   font-weight: normal;
   height: 10px;
-  left: 80%;
+  left: 40%;
   letter-spacing: 0.105em;
   line-height: 42px;
   position: absolute;
-  top: 200px;
-  width: 100px;
+  top: 260px;
+  width: 300px;
 }
 input{
   border: 2px solid #000000;
