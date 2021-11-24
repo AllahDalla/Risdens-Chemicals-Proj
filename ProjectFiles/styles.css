@@ -1,57 +1,527 @@
+/* This is where a webpage is going to be styled */
 html{
   background: #90DBE5;
 }
-.cus_title{
-  background-color: #92a8d1;
-  color: #FFFFFF;
-  font-family: Roboto;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: normal;
-  height: 54px;
-  left: 275px;
-  letter-spacing: 0.105em;
-  line-height: 42px;
-  position: absolute;
-  text-align: center;
-  top: 1px;
-  width: 936px;
+label{
+margin-left:5%;
+margin-bottom:-1.1%;
+font-family: Roboto;
+font-size: 100%;
 }
-table{
-  background: #FFFFFF;
-  border: 3px solid #000000;
-  bottom: 33.01%;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  left: 40%;
-  position: absolute;
-  right: 7.36%;
-  top: 19%;  
+
+#MONA_box{
+position: absolute;
+left: 21.46%;
+right: 21.46%;
+top: 24.22%;
+bottom: 21.09%;
+height: auto;
+
+background: #7AECE5;
+border: 0.25rem solid #000000;
+box-shadow: 1.1875rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25);
+border-radius: 47px;
 }
-form{
-  color: #000000;
-  font-family: Roboto;
-  font-size: 19px;
-  font-style: normal;
-  font-weight: normal;
-  height: 10px;
-  left: 40%;
-  letter-spacing: 0.105em;
-  line-height: 42px;
+#items-center{
   position: absolute;
-  top: 200px;
-  width: 300px;
+  left: 21.46%;
+  right: 21.46%;
+  top: 24.22%;
+  bottom: 21.09%;
 }
-input{
-  border: 2px solid #000000;
-  position: absolute;
+
+.u_name{
+  margin-top:5%;
 }
-#input[type=text], select {
+.u_pwd{
+  margin-top:5%;
+  margin-bottom:2.1%;
+}
+
+#MONA_STAFF_box{
+  margin-top:-5%;
+  padding-top: 3.75rem;
+  display: flex;
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  flex-direction: column;
+  height: 21.875rem;
+  background: #64C0BB;
+  border: 0.25rem solid #000000;
+  box-shadow: 1.1875rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+input[type=text]{
+width: 90%;
+padding: 0.75rem 1.25rem;
+margin-left: 5%;
+
+font-size:100%;
+font-family: 'Times New Roman', Times, serif;
+
+
+border: 1px solid black;
+box-sizing: border-box;
+box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+
+}
+#roles{
+margin-left:5%;
+width: 90%;
+font-family: 'Times New Roman', Times, serif;
+font-weight: normal;
+font-size:100%;
+background: #FFFFFF;
+border: 1px solid #000000;
+border-radius: 0px;
+box-shadow:  0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+#textbox1{
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow:  0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+#textbox2{
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow:  0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+::placeholder { 
+  color:black;
+}
+
+input[type=submit] {
+margin-top: 2%;
+margin-left:40%;
+width: 20%;
+height: 10%;
+text-align: center;
+border-radius: 5px;
+background-color: #4B7DDF;
+}
+input[type=submit]:hover {
+background-color: gray;
+}
+
+#MONA_line{
+  position: absolute;
+  width: 15.125rem;
+  /* height: 0px; */
+  left: 37.5%;
+  top: 55%;
+
+  border: 0.125rem solid #000000;
+  background:black;
+  transform: rotate(90deg);
+
+  
+}
+
+/* CUSTOMER */
+
+#MONA_CUS_btn{
+  position: absolute;
+  width: auto;
+  height: 3.75rem;
+
+  left: 30%;
+  right: 52.78%;
+  top: 45.02%;
+  bottom: 48.44%;
+
+  background: #4B7DDF;
+  border-style: solid;
+  border-radius: 19px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.105em;
+
+  color: #FFFFFF;
+}
+
+
+/* STAFF */
+
+#MONA_STAFF_btn{
+  position: absolute;
+  width: auto;
+  height: 3.75rem;
+
+  left: 52.78%;
+  right: 23.82%;
+  top: 45.02%;
+  bottom: 48.44%;
+  
+  background: #4B7DDF;
+  border-style: solid;
+  border-radius: 1.1875rem;
+
+  font-family: Roboto;
+  /* font-style: normal;
+  font-weight: normal; */
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.105em;
+
+  color: #FFFFFF;
+}
+  
+
+/* WHO ARE YOU ? */
+
+.MONA_title {
+  position: absolute; 
+  flex-direction: column-reverse;
+  width: 55%;
+  height: 4.25rem;
+  left: 21%;
+  top:5%;
+
+  font-family: Roboto;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
+  text-align: center;
+  letter-spacing: 0.105em;
+
+  color: #000000;
+  
+}
+  
+html {
+height: 100%;
+}
+
+body {
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+display: grid;
+grid-template-columns: 20% 80%;
+grid-template-rows: 10% 90%;
+height: 100%;
+margin: auto;
+}
+
+#result {
+grid-column-start: 2;
+grid-row-start: 2;
+}
+
+.header {
+display: flex;
+color: #ffffff;
+background-color: #000000;
+grid-column: 1 / 3;
+align-items: center;
+}
+
+.header h1 {
+margin-left: 20px;
+font-size: 14px;
+}
+
+.header i {
+margin-left: 20px;
+font-size: x-large;
+}
+
+.sidebar {
+display: flex;
+flex-direction: column;
+background-color: #d3d3d3;
+grid-row: 2;
+padding: 15px;
+}
+
+.sidebar div {
+margin-top: 20px;
+}
+
+.sidebar a {
+text-decoration: none;
+font-weight: bold;
+color: #000000;
+}
+
+.body form {
+margin: 20px;
+}
+
+.body h2 {
+margin-left: 20px;
+font-size: 30px;
+}
+
+.body input {
+background-color: #ededed;
+border: 1;
+border-radius: 5px;
+border-width: thin;
+margin-top: 10px;
+width: 300px;
+height: 25px;
+}
+
+form label {
+font-weight: bold;
+padding-bottom: 10px;
+}
+
+#searchbtn {
+border: none;
+border-radius: 5px;
+background-color: #0c71e0;
+color: #ffffff;
+font-size: 13px;
+font-weight: bold;
+padding: 10px 50px 10px 50px;
+}
+
+/*New User Code End*/
+
+/*Create Issue Code Start*/
+
+#description {
+background-color: #ededed;
+border: 1;
+border-radius: 5px;
+border-width: thin;
+margin-top: 10px;
+width: 300px;
+height: 100px;
+}
+
+select {
+background-color: #ededed;
+border: 1;
+border-radius: 5px;
+border-width: thin;
+margin-top: 10px;
+width: 308px;
+height: 30px;
+font-weight: bold;
+padding-left: 10px;
+}
+
+/*Create Issue Code End*/
+#open {
+background-color: #2da562; /* Blue */
+border: none;
+color: white;
+padding-left: 25px;
+padding-right: 25px;
+padding-top: 2px;
+padding-bottom: 2px;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+font-family: "Times New Roman", Times, serif;
+border-radius: 5px;
+cursor: pointer;
+}
+
+#inprogress {
+background-color: #ffdb4d; /* Blue */
+border: none;
+color: black;
+padding-left: 25px;
+padding-right: 25px;
+padding-top: 2px;
+padding-bottom: 2px;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+font-family: "Times New Roman", Times, serif;
+border-radius: 5px;
+cursor: pointer;
+}
+
+#closed {
+background-color: #ff5400; /* Blue */
+border: none;
+color: white;
+padding-left: 25px;
+padding-right: 25px;
+padding-top: 2px;
+padding-bottom: 2px;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+font-family: "Times New Roman", Times, serif;
+border-radius: 5px;
+cursor: pointer;
+}
+
+#allissue {
+background-color: white; /* Blue */
+border: none;
+color: black;
+padding-left: 25px;
+padding-right: 25px;
+padding-top: 2px;
+padding-bottom: 2px;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+font-family: "Times New Roman", Times, serif;
+border-radius: 5px;
+cursor: pointer;
+}
+
+#openissue {
+background-color: white;
+font-family: "Times New Roman", Times, serif;
+border: none;
+color: black;
+padding: 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+#ticket {
+background-color: white;
+font-family: "Times New Roman", Times, serif;
+border: none;
+color: black;
+padding: 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.filterbtns {
+display: flex;
+flex-direction: row;
+grid-gap: 10px;
+}
+
+/*Detailed Issue Code Start*/
+
+.bodygrid {
+display: grid;
+grid-template-columns: 70% 30%;
+}
+#title_box{
+  position: top;
+  width: 1440px;
+  height: 120px;
+  left: 0px;
+  top: 0px;
+}
+#bodymain {
+grid-column: 1;
+padding: 20px;
+}
+
+.bodygrid h2 {
+font-size: 30px;
+}
+
+#issue {
+font-size: 10px;
+}
+
+#para {
+margin-top: 20px;
+max-width: 800px;
+text-align: justify;
+}
+
+#dates {
+margin-top: 20px;
+}
+
+#asidemain label {
+font-weight: bold;
+}
+#products td, #customer th{
+  border: 1px solid black;
+  padding: 8px;
+}
+#aside label {
+margin-left: 10px;
+}
+
+#asidemain {
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: 13px;
+grid-column: 2;
+overflow: hidden;
+}
+#aside p {
+margin-left: 10px;
+}
+
+#aside {
+margin-top: 110px;
+border: 1px;
+border-style: solid;
+border-radius: 5px;
+padding: 10px 0px 30px 0px;
+height: auto;
+width: 200px;
+background-color: #d3d3d3;
+}
+
+#markclosed {
+margin-top: 20px;
+border: none;
+border-radius: 5px;
+padding: 10px 0px 10px 0px;
+width: 200px;
+color: #ffffff;
+background-color: #0c71e0;
+font-weight: bold;
+float: right;
+}
+
+#markinprog,
+.issueButton {
+margin-top: 20px;
+border: none;
+border-radius: 5px;
+padding: 10px 0px 10px 0px;
+width: 200px;
+background-color: #4c9a2a;
+color: #ffffff;
+font-weight: bold;
+float: right;
+}
+
+/*Detailed Issue Code End*/
+
+/*table on homescreen*/
+table {
+border-collapse: collapse;
+width: 100%;
+padding-top: 2em;
+float: center;
+}
+table td,
+th {
+border: 2px solid #ddd;
+padding: 10px;
+}
+
+table td {
+padding-top: 2em;
+}
+#result {
+padding-top: 10px;
+}
+
+tr,
+th {
+border: 0;
+text-align: center;
 }
