@@ -7,9 +7,22 @@ if ($button == "place-order"){
   // Daniel, you will be working right here
   // remove input for id
     ?>
+        <style>
+            text-align: center;
+            font-family: Helvetica;
+            font-size: medium;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            text-transform: none;
+            color: #000000;
+            background-color: #ffffff;
+}  
+        </style>
         <form
           action="../ProjectFiles/Javascripts/Main.js"
           method="post">
+          
           <label for="product-name">Product Name</label>
           <input type="text" id="product-name" name="product-name" />
           <label for="quantity">Quantity</label>
