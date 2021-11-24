@@ -1,3 +1,25 @@
+<style type="text/css">
+table {
+margin: 8px;
+}
+
+th {
+font-family: Arial, Helvetica, sans-serif;
+font-size: .7em;
+background: #666;
+color: #FFF;
+padding: 2px 6px;
+border-collapse: separate;
+border: 1px solid #000;
+}
+
+td {
+font-family: Arial, Helvetica, sans-serif;
+font-size: .7em;
+border: 1px solid #DDD;
+}
+</style>
+
 <?php
 
 
@@ -7,18 +29,9 @@ if ($button == "place-order"){
   // Daniel, you will be working right here
   // remove input for id
     ?>
-        <style>
-            text-align: center;
-            font-family: Helvetica;
-            font-size: medium;
-            font-style: normal;
-            font-weight: normal;
-            text-decoration: none;
-            text-transform: none;
-            color: #000000;
-            background-color: #ffffff;
-}  
-        </style>
+        
+}       
+
         <form
           action="../ProjectFiles/Javascripts/Main.js"
           method="post">
