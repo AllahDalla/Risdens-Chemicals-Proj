@@ -118,6 +118,7 @@ function buttonFucntions(){
 
 function managestockButtonFunction(){
     var addStock = document.getElementById("add-stock-btn")
+    var updateStock = document.getElementById("update-stock-btn")
     var result = document.getElementById("result-area")
 
 
@@ -141,4 +142,27 @@ function managestockButtonFunction(){
                 console.log("There was error with the connection: "+error)
             })
     })
+
+    updateStock.addEventListener("click", async function(f){
+        f.target.preventDefault;
+
+        var url = "../PhpApi/managestockbuttonfunctions.php?button=update"
+
+        await fetch(url)
+            .then(async response =>{
+                if(response.ok){
+                    var input_field = await response.text()
+                    result.innerHTML = ""+input_field
+                    return;
+
+                }else{
+                    return Promise.reject("The response was not 200. Something went wrong")
+                }
+            })
+            .catch(error =>{
+                console.log("There was error with the connection: "+error)
+            })
+    })
 }
+
+// Devaskye, your function will be right here

@@ -36,7 +36,6 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       <div class="stock-btn">
         <button id="add-stock-btn" class="btn-1">ADD STOCK</button>
         <button id="update-stock-btn" class="btn-1">UPDATE STOCK</button>
-        <button id="place-order-btn" class="btn-1">Place Order</button>
       </div>
       <!-- This is where the things will come up when each button is clicked -->
       <div id="result-area"></div>

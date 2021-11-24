@@ -6,6 +6,8 @@
 $button = $_GET['button'];
 
 if ($button == "add"){
+  // Daniel, you will be working right here
+  // remove input for id
     ?>
 
         <form
@@ -21,33 +23,13 @@ if ($button == "add"){
           <input type="text" id="price" name="price" />
           <input type="submit" id="submit-btn" value="submit" />
         </form>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit cum hic ullam fugiat! Quaerat fugit perferendis impedit pariatur fugiat voluptas eaque, inventore quod animi. Quo alias natus ex veritatis.</p>
+        
 
     <?php
+}else if($button == "update"){
+  // Ramona, you will be working on the html here
+  // html should go here just like above ^^^^^^^^^^^
+
 }
 
 
