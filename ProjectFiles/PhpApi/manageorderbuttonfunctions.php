@@ -1,36 +1,11 @@
-<style type="text/css">
-table {
-margin: 8px;
-}
-
-th {
-font-family: Arial, Helvetica, sans-serif;
-font-size: .7em;
-background: #666;
-color: #FFF;
-padding: 2px 6px;
-border-collapse: separate;
-border: 1px solid #000;
-}
-
-td {
-font-family: Arial, Helvetica, sans-serif;
-font-size: .7em;
-border: 1px solid #DDD;
-}
-</style>
-
 <?php
-
 
 $button = $_GET['button'];
 
 if ($button == "place-order"){
   // Daniel, you will be working right here
   // remove input for id
-    ?>
-        
-}       
+?>       
 
         <form
           action="../ProjectFiles/Javascripts/Main.js"
@@ -45,8 +20,7 @@ if ($button == "place-order"){
           <input type="submit" id="submit-btn" value="submit" />
         </form>
         
-
-    <?php
+<?php
 }else if($button == "generate-receipt"){
   echo "This button should make a fancy table with a printable receipt.";
 }
