@@ -49,14 +49,15 @@ thead {
 }
 
 #result-area {
-  /* height: 50px;
-  width: 100%; */
-  margin: 0px auto;
-  /* border: 1px solid blue; */
-  min-height: 100%;
-  width: 90%;
-  /* overflow-y: auto; */
-  justify-content: center;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: medium;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 .stock-btn {
