@@ -5,6 +5,7 @@ $username = 'risden_admin';
 $password = 'R1SD3N2211';
 $dbname = 'risdendata';
 
+
 try {
     $conn = new PDO(
         'mysql:host=' . $host . ';dbname=' . $dbname,
@@ -16,11 +17,12 @@ try {
 
     // Testing database retrieval and updating
 
-    $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-
-    $sql = "INSERT INTO `users` VALUES ('0','Manager','AllahDalla', 'jackfruit')";
-    $conn->exec($sql);
-    echo "New record added";
+    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    // for($primary_key=10; $primary_key<=100; $primary_key++){
+    // $sql = "INSERT INTO `products` VALUES ('$primary_key','Bleach','50', '20000')";
+    // $conn->exec($sql);
+    // echo "New record added";
+    // }
     
 } catch (PDOException $e) {
     die($e->getMessage());

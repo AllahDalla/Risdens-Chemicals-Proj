@@ -1,4 +1,5 @@
 <?php 
+include '../Databases/database.php';
 
 //php goes here friends.
 
@@ -6,9 +7,16 @@
 // IS CLICKED, THE MANAGE STOCK PAGE ON THE RIGHT-HAND SIDE WILL APPEAR. ALL OTHER FUNCTIONALITIES
 // ARE TO BE DONE IN ANOTHER FILE FOR ORGANIZATION
 
+
+
+
 $pageinfo = $_GET['page'];
 
 if($pageinfo == "managestock"){ //checks to see which page is being requested to be displayed. This is how the pages will be requested from the sidebar buttons
+    $stmt= $conn->query("SELECT * FROM `products`");
+
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
     ?>
 
     <!-- HTML for main area of manage stock starts here -->
@@ -25,12 +33,14 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
           </tr>
         </th>
         <tbody>
+          <?php foreach($results as $row):?>
           <tr>
-            <td>1</td>
-            <td>Bleach</td>
-            <td>50Gallons</td>
-            <td>$120</td>
+            <td><?=$row['id'];?></td>
+            <td><?=$row['product_name'];?></td>
+            <td><?=$row['quantity'];?></td>
+            <td><?=$row['price'];?></td>
           </tr>
+          <?php endforeach;?>
         </tbody>
       </table>
       <div class="stock-btn">
