@@ -56,6 +56,7 @@ function buttonFucntions(){
                 if(response.ok){
                     let pagedata = await response.text() //collects data from php file
                     mainarea.innerHTML = ""+pagedata // adds data from php file to the main area on the admin page for manage stock
+                    manageOrderButtonFunction();
                     return;
                 }
                 else{
@@ -116,7 +117,10 @@ function buttonFucntions(){
     })
 }
 
-function managestockButtonFunction(){
+//THESE FUNCTIONS ARE FOR RIGHT HAND SIDE OF PAGE. 
+//GIVES BUTTONS THEIR FEATURES. DO NOT TURN OFF JAVASCRIPT.
+
+function managestockButtonFunction(){ 
     var addStock = document.getElementById("add-stock-btn")
     var updateStock = document.getElementById("update-stock-btn")
     var result = document.getElementById("result-area")
@@ -165,4 +169,74 @@ function managestockButtonFunction(){
     })
 }
 
-// Devaskye, your function will be right here
+// Davaskye, your function will be right here
+function manageOrderButtonFunction(){
+    var placeOrder = document.getElementById("place-order-btn")
+    var generateReceipt = document.getElementById("generate-receipt-btn")
+    var viewSchedule = document.getElementById("view-schedule-btn")
+    var result = document.getElementById("result-area")
+
+
+    placeOrder.addEventListener("click", async function(e){
+        e.target.preventDefault;
+
+        var url = "../PhpApi/manageorderbuttonfunctions.php?button=place-order"
+
+        await fetch(url)
+            .then(async response =>{
+                if(response.ok){
+                    var input_field = await response.text()
+                    result.innerHTML = ""+input_field
+                    return;
+
+                }else{
+                    return Promise.reject("The response was not 200. Something went wrong")
+                }
+            })
+            .catch(error =>{
+                console.log("There was error with the connection: "+error)
+            })
+    })
+
+    generateReceipt.addEventListener("click", async function(f){
+        f.target.preventDefault;
+
+        var url = "../PhpApi/manageorderbuttonfunctions.php?button=generate-receipt"
+
+        await fetch(url)
+            .then(async response =>{
+                if(response.ok){
+                    var input_field = await response.text()
+                    result.innerHTML = ""+input_field
+                    return;
+
+                }else{
+                    return Promise.reject("The response was not 200. Something went wrong")
+                }
+            })
+            .catch(error =>{
+                console.log("There was error with the connection: "+error)
+            })
+    })
+
+    viewSchedule.addEventListener("click", async function(f){
+        f.target.preventDefault;
+
+        var url = "../PhpApi/manageorderbuttonfunctions.php?button=view-schedule"
+
+        await fetch(url)
+            .then(async response =>{
+                if(response.ok){
+                    var input_field = await response.text()
+                    result.innerHTML = ""+input_field
+                    return;
+
+                }else{
+                    return Promise.reject("The response was not 200. Something went wrong")
+                }
+            })
+            .catch(error =>{
+                console.log("There was error with the connection: "+error)
+            })
+    })
+}

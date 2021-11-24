@@ -9,7 +9,7 @@
 $pageinfo = $_GET['page'];
 
 if($pageinfo == "managestock"){ //checks to see which page is being requested to be displayed. This is how the pages will be requested from the sidebar buttons
-    ?>
+?>
 
     <!-- HTML for main area of manage stock starts here -->
 
@@ -41,9 +41,39 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       <div id="result-area"></div>
     </div>
 
-    <?php
+<?php
 }else if($pageinfo == "manageorder"){
-    echo "Page is suppose to show something about the management of order. What am I saying? IRDK";
+?>
+  <div id="main-info">
+      <h1>RISDEN'S CHEMICALS ORDER MANAGER</h1>
+      <table>
+        <th>
+          <tr>
+            <td>ID</td>
+            <td>Product Name</td>
+            <td>Quantity</td>
+            <td>Price</td>
+          </tr>
+        </th>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Bleach</td>
+            <td>50Gallons</td>
+            <td>$120</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="stock-btn">
+        <button id="place-order-btn" class="btn-1">PLACE ORDER</button>
+        <button id="generate-receipt-btn" class="btn-1">GENERATE RECEIPT</button>
+        <button id="view-schedule-btn" class="btn-1">VIEW SCHEDULE</button>
+      </div>
+      <!-- This is where the things will come up when each button is clicked -->
+      <div id="result-area"></div>
+    </div>
+
+<?php
 }else if($pageinfo == "financialreport"){
     echo "Page is suppose to show here too. When we get it right, it shall be added in God's grace";
 }else if($pageinfo == "settings"){
