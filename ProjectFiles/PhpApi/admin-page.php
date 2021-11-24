@@ -13,6 +13,7 @@ include '../Databases/database.php';
 $pageinfo = $_GET['page'];
 
 if($pageinfo == "managestock"){ //checks to see which page is being requested to be displayed. This is how the pages will be requested from the sidebar buttons
+
     $stmt= $conn->query("SELECT * FROM `products`");
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -23,6 +24,41 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 
     <div id="main-info">
       <h1>RISDEN'S CHEMICALS STOCK DATABASE</h1>
+      <div id="scrollable-table">
+        <table>
+          <th>
+            <tr>
+              <td>ID</td>
+              <td>Product Name</td>
+              <td>Quantity</td>
+              <td>Price</td>
+            </tr>
+          </th>
+          <tbody>
+            <?php foreach($results as $row):?>
+            <tr>
+              <td><?=$row['id'];?></td>
+              <td><?=$row['product_name'];?></td>
+              <td><?=$row['quantity'];?></td>
+              <td><?=$row['price'];?></td>
+            </tr>
+            <?php endforeach;?>
+          </tbody>
+        </table>
+      </div>
+      <div class="stock-btn">
+        <button id="add-stock-btn" class="btn-1">ADD STOCK</button>
+        <button id="update-stock-btn" class="btn-1">UPDATE STOCK</button>
+      </div>
+      <!-- This is where the things will come up when each button is clicked -->
+      <div id="result-area"></div>
+    </div>
+
+<?php
+}else if($pageinfo == "manageorder"){
+?>
+  <div id="main-info">
+      <h1>RISDEN'S CHEMICALS ORDER MANAGER</h1>
       <table>
         <th>
           <tr>
@@ -33,27 +69,24 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
           </tr>
         </th>
         <tbody>
-          <?php foreach($results as $row):?>
           <tr>
-            <td><?=$row['id'];?></td>
-            <td><?=$row['product_name'];?></td>
-            <td><?=$row['quantity'];?></td>
-            <td><?=$row['price'];?></td>
+            <td>1</td>
+            <td>Bleach</td>
+            <td>50Gallons</td>
+            <td>$120</td>
           </tr>
-          <?php endforeach;?>
         </tbody>
       </table>
       <div class="stock-btn">
-        <button id="add-stock-btn" class="btn-1">ADD STOCK</button>
-        <button id="update-stock-btn" class="btn-1">UPDATE STOCK</button>
+        <button id="place-order-btn" class="btn-1">PLACE ORDER</button>
+        <button id="generate-receipt-btn" class="btn-1">GENERATE RECEIPT</button>
+        <button id="view-schedule-btn" class="btn-1">VIEW SCHEDULE</button>
       </div>
       <!-- This is where the things will come up when each button is clicked -->
       <div id="result-area"></div>
     </div>
 
-    <?php
-}else if($pageinfo == "manageorder"){
-    echo "Page is suppose to show something about the management of order. What am I saying? IRDK";
+<?php
 }else if($pageinfo == "financialreport"){
     echo "Page is suppose to show here too. When we get it right, it shall be added in God's grace";
 }else if($pageinfo == "settings"){

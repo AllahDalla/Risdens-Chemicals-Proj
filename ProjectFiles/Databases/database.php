@@ -12,7 +12,7 @@ try {
         $username,
         $password
     );
-    echo "This connected!";
+    // echo "This connected!";
 
 
     // Testing database retrieval and updating
