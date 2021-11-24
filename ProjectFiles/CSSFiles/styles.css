@@ -9,30 +9,36 @@ body {
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: 10% 90%;
-  height: 100vh;
+  max-height: 100vh;
   margin: auto;
 }
 
 .main-area {
   grid-column-start: 2;
   grid-row-start: 2;
-  /* border: 2px solid orange; */
+  grid-row-end: -1;
+  border: 2px solid orange;
   text-align: center;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 #main-info {
-  /* border: 2px solid green; */
+  border: 2px solid green;
   margin: 0% 2.5%;
-  height: 100vh;
-  overflow-y: auto;
   padding-top: 00.5em;
 }
 
 table {
-  border: 0.2em solid black;
+  border: 0.1em solid black;
   width: 95%;
   margin: 0% 2.5%;
   padding-top: 2em;
+}
+
+#scrollable-table {
+  max-height: 40vh;
+  overflow-y: auto;
 }
 
 tr,
@@ -116,6 +122,8 @@ input {
   background-color: #d3d3d3;
   padding: 15px;
   height: 100vh;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
 
 .sidebar div {
@@ -133,240 +141,9 @@ input {
   font-size: 30px;
 }
 
-.body input {
-  background-color: #ededed;
-  border: 1;
-  border-radius: 5px;
-  border-width: thin;
-  margin-top: 10px;
-  width: 300px;
-  height: 25px;
-}
-
-#searchbtn {
-  border: none;
-  border-radius: 5px;
-  background-color: #0c71e0;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: bold;
-  padding: 10px 50px 10px 50px;
-}
-
 /*New User Code End*/
 
 /*Create Issue Code Start*/
-
-#description {
-  background-color: #ededed;
-  border: 1;
-  border-radius: 5px;
-  border-width: thin;
-  margin-top: 10px;
-  width: 300px;
-  height: 100px;
-}
-
-select {
-  background-color: #ededed;
-  border: 1;
-  border-radius: 5px;
-  border-width: thin;
-  margin-top: 10px;
-  width: 308px;
-  height: 30px;
-  font-weight: bold;
-  padding-left: 10px;
-}
-
-/*Create Issue Code End*/
-#open {
-  background-color: #2da562; /* Blue */
-  border: none;
-  color: white;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#inprogress {
-  background-color: #ffdb4d; /* Blue */
-  border: none;
-  color: black;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#closed {
-  background-color: #ff5400; /* Blue */
-  border: none;
-  color: white;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#allissue {
-  background-color: white; /* Blue */
-  border: none;
-  color: black;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#openissue {
-  background-color: white;
-  font-family: "Times New Roman", Times, serif;
-  border: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#ticket {
-  background-color: white;
-  font-family: "Times New Roman", Times, serif;
-  border: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.filterbtns {
-  display: flex;
-  flex-direction: row;
-  grid-gap: 10px;
-}
-
-/*Detailed Issue Code Start*/
-
-.bodygrid {
-  display: grid;
-  grid-template-columns: 70% 30%;
-}
-
-#bodymain {
-  grid-column: 1;
-  padding: 20px;
-}
-
-.bodygrid h2 {
-  font-size: 30px;
-}
-
-#issue {
-  font-size: 10px;
-}
-
-#para {
-  margin-top: 20px;
-  max-width: 800px;
-  text-align: justify;
-}
-
-#dates {
-  margin-top: 20px;
-}
-
-#asidemain label {
-  font-weight: bold;
-}
-
-#aside label {
-  margin-left: 10px;
-}
-
-#asidemain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 13px;
-  grid-column: 2;
-  overflow: hidden;
-}
-#aside p {
-  margin-left: 10px;
-}
-
-#aside {
-  margin-top: 110px;
-  border: 1px;
-  border-style: solid;
-  border-radius: 5px;
-  padding: 10px 0px 30px 0px;
-  height: auto;
-  width: 200px;
-  background-color: #d3d3d3;
-}
-
-#markclosed {
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 0px 10px 0px;
-  width: 200px;
-  color: #ffffff;
-  background-color: #0c71e0;
-  font-weight: bold;
-  float: right;
-}
-
-#markinprog,
-.issueButton {
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 0px 10px 0px;
-  width: 200px;
-  background-color: #4c9a2a;
-  color: #ffffff;
-  font-weight: bold;
-  float: right;
-}
-
-/*Detailed Issue Code End*/
-
-/*table on homescreen*/
 
 #result {
   padding-top: 10px;
