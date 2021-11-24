@@ -9,8 +9,7 @@ USE risdendata;
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL auto_increment,
-  `firstname` varchar(64) NOT NULL default '',
-  `lastname` varchar(64) NOT NULL default '',
+  `role` varchar(64) NOT NULL default '',
   `username` varchar(64) NOT NULL unique,
   `password` varchar(64) NOT NULL default '',
   PRIMARY KEY  (`id`)
