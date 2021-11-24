@@ -15,47 +15,44 @@ left: 21.46%;
 right: 21.46%;
 top: 24.22%;
 bottom: 21.09%;
+height: auto;
 
 background: #7AECE5;
-border: 4px solid #000000;
-box-shadow: 19px 10px 4px rgba(0, 0, 0, 0.25);
+border: 0.25rem solid #000000;
+box-shadow: 1.1875rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25);
 border-radius: 47px;
 }
 #items-center{
-position: absolute;
-left: 21.46%;
-right: 21.46%;
-top: 24.22%;
-bottom: 21.09%;
-
+  position: absolute;
+  left: 21.46%;
+  right: 21.46%;
+  top: 24.22%;
+  bottom: 21.09%;
 }
 
 .u_name{
-/* margin-top: 30px; */
-margin-top:5%;
-
+  margin-top:5%;
 }
 .u_pwd{
-/* margin-top: 30px; */
-margin-top:5%;
-margin-bottom:2.1%;
+  margin-top:5%;
+  margin-bottom:2.1%;
 }
 
 #MONA_STAFF_box{
   margin-top:-5%;
-  padding-top: 60px;
+  padding-top: 3.75rem;
   display: flex;
   width: 100%;
   flex-direction: column;
-  height: 350px;
+  height: 21.875rem;
   background: #64C0BB;
-  border: 4px solid #000000;
-  box-shadow: 19px 10px 4px rgba(0, 0, 0, 0.25);
+  border: 0.25rem solid #000000;
+  box-shadow: 1.1875rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 
 input[type=text]{
 width: 90%;
-padding: 12px 20px;
+padding: 0.75rem 1.25rem;
 margin-left: 5%;
 
 font-size:100%;
@@ -64,7 +61,7 @@ font-family: 'Times New Roman', Times, serif;
 
 border: 1px solid black;
 box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 
 }
 #roles{
@@ -76,24 +73,24 @@ font-size:100%;
 background: #FFFFFF;
 border: 1px solid #000000;
 border-radius: 0px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow:  0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 #textbox1{
   background: #FFFFFF;
   border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow:  0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 #textbox2{
   background: #FFFFFF;
   border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow:  0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 ::placeholder { 
   color:black;
 }
 
 input[type=submit] {
-margin-top:5%;
+margin-top: 2%;
 margin-left:40%;
 width: 20%;
 height: 10%;
@@ -107,14 +104,12 @@ background-color: gray;
 
 #MONA_line{
   position: absolute;
-  width: 242px;
-  height: 0px;
-  /* left: 410px; */
+  width: 15.125rem;
+  /* height: 0px; */
   left: 37.5%;
-  /* top: 300px; */
   top: 55%;
 
-  border: 2px solid #000000;
+  border: 0.125rem solid #000000;
   background:black;
   transform: rotate(90deg);
 
@@ -125,11 +120,10 @@ background-color: gray;
 
 #MONA_CUS_btn{
   position: absolute;
-  /* width: 228px; */
-  width: 20%;
-  height: 60px;
+  width: auto;
+  height: 3.75rem;
 
-  left: 23.82%;
+  left: 30%;
   right: 52.78%;
   top: 45.02%;
   bottom: 48.44%;
@@ -141,8 +135,7 @@ background-color: gray;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
-  /* line-height: 28px; */
+  font-size: 1.5rem;
   text-align: center;
   letter-spacing: 0.105em;
 
@@ -154,9 +147,8 @@ background-color: gray;
 
 #MONA_STAFF_btn{
   position: absolute;
-  /* width: 228px; */
-  width: 20%;
-  height: 60px;
+  width: auto;
+  height: 3.75rem;
 
   left: 52.78%;
   right: 23.82%;
@@ -165,13 +157,12 @@ background-color: gray;
   
   background: #4B7DDF;
   border-style: solid;
-  border-radius: 19px;
+  border-radius: 1.1875rem;
 
   font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  /* line-height: 28px; */
+  /* font-style: normal;
+  font-weight: normal; */
+  font-size: 1.5rem;
   text-align: center;
   letter-spacing: 0.105em;
 
@@ -183,17 +174,15 @@ background-color: gray;
 
 .MONA_title {
   position: absolute; 
-  width: 608px;
-  height: 68px;
-  /* left: 230px; */
+  flex-direction: column-reverse;
+  width: 55%;
+  height: 4.25rem;
   left: 21%;
-  top: 10px;
+  top:5%;
 
   font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
   text-align: center;
   letter-spacing: 0.105em;
 
@@ -426,7 +415,7 @@ grid-template-columns: 70% 30%;
   height: 120px;
   left: 0px;
   top: 0px;
-
+}
 #bodymain {
 grid-column: 1;
 padding: 20px;
@@ -455,8 +444,8 @@ font-weight: bold;
 }
 #products td, #customer th{
   border: 1px solid black;
-  padding: 8px
-
+  padding: 8px;
+}
 #aside label {
 margin-left: 10px;
 }
