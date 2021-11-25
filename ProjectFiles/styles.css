@@ -10,17 +10,20 @@ font-size: 100%;
 }
 
 #MONA_box{
-position: absolute;
-left: 21.46%;
-right: 21.46%;
-top: 24.22%;
-bottom: 21.09%;
-height: auto;
+  position: absolute;
+  left: 17.46%;
+  right: 17.46%;
+  top: 24.22%;
+  bottom: 21.09%;
+  width: 60%;
 
-background: #7AECE5;
-border: 0.25rem solid #000000;
-box-shadow: 1.1875rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25);
-border-radius: 47px;
+  background: #7AECE5;
+  border: 0.25rem solid #000000;
+  box-shadow: 1.1875rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25);
+  border-radius: 47px;
+}
+#MONA_btn-box{
+  display: block;
 }
 #items-center{
   position: absolute;
@@ -95,6 +98,7 @@ margin-left:40%;
 width: 20%;
 height: 10%;
 text-align: center;
+border: 1px solid #000000;
 border-radius: 5px;
 background-color: #4B7DDF;
 }
@@ -105,8 +109,7 @@ background-color: gray;
 #MONA_line{
   position: absolute;
   width: 15.125rem;
-  /* height: 0px; */
-  left: 37.5%;
+  left:36.5%;
   top: 55%;
 
   border: 0.125rem solid #000000;
@@ -120,11 +123,10 @@ background-color: gray;
 
 #MONA_CUS_btn{
   position: absolute;
-  width: auto;
+  width: 12rem;
   height: 3.75rem;
 
-  left: 30%;
-  right: 52.78%;
+  left: 18%;
   top: 45.02%;
   bottom: 48.44%;
 
@@ -141,17 +143,20 @@ background-color: gray;
 
   color: #FFFFFF;
 }
-
-
+#MONA_CUS_btn:hover{
+  background-color: rgb(146, 143, 143);
+}
+#MONA_STAFF_btn:hover{
+  background-color:rgb(146, 143, 143) ;
+}
 /* STAFF */
 
 #MONA_STAFF_btn{
   position: absolute;
-  width: auto;
+  width: 8rem;
   height: 3.75rem;
 
-  left: 52.78%;
-  right: 23.82%;
+  left: 62.78%;
   top: 45.02%;
   bottom: 48.44%;
   
@@ -160,8 +165,6 @@ background-color: gray;
   border-radius: 1.1875rem;
 
   font-family: Roboto;
-  /* font-style: normal;
-  font-weight: normal; */
   font-size: 1.5rem;
   text-align: center;
   letter-spacing: 0.105em;
@@ -174,11 +177,9 @@ background-color: gray;
 
 .MONA_title {
   position: absolute; 
-  flex-direction: column-reverse;
-  width: 55%;
+  width: 59%;
   height: 4.25rem;
-  left: 21%;
-  top:5%;
+  left: 20%;
 
   font-family: Roboto;
   font-size: 2.25rem;
