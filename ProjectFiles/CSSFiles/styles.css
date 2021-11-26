@@ -98,6 +98,11 @@ input {
   margin-top: 0.6em;
 }
 
+a[href=""]:hover {
+  cursor: pointer;
+  color: red;
+}
+
 .header {
   display: flex;
   color: #ffffff;

@@ -29,6 +29,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
           <th>
             <tr>
               <td>ID</td>
+              <td>Supplier</td>
               <td>Product Name</td>
               <td>Quantity</td>
               <td>Price</td>
@@ -38,9 +39,10 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
             <?php foreach($results as $row):?>
             <tr>
               <td><?=$row['id'];?></td>
+              <td><?=$row['supplier'];?></td>
               <td><?=$row['product_name'];?></td>
-              <td><?=$row['quantity'];?></td>
-              <td><?=$row['price'];?></td>
+              <td><?=$row['quantity']."Gallons";?></td>
+              <td><?="$".$row['price'];?></td>
             </tr>
             <?php endforeach;?>
           </tbody>
@@ -56,27 +58,38 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 
 <?php
 }else if($pageinfo == "manageorder"){
+
+  $stmt= $conn->query("SELECT * FROM `products`");
+
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
   <div id="main-info">
       <h1>RISDEN'S CHEMICALS ORDER MANAGER</h1>
-      <table>
-        <th>
-          <tr>
-            <td>ID</td>
-            <td>Product Name</td>
-            <td>Quantity</td>
-            <td>Price</td>
-          </tr>
-        </th>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Bleach</td>
-            <td>50Gallons</td>
-            <td>$120</td>
-          </tr>
-        </tbody>
-      </table>
+      <div id="scrollable-table">
+        <table>
+          <th>
+            <tr>
+              <td>ID</td>
+              <td>Supplier</td>
+              <td>Product Name</td>
+              <td>Quantity</td>
+              <td>Price</td>
+            </tr>
+          </th>
+          <tbody>
+            <?php foreach($results as $row):?>
+            <tr>
+              <td><?=$row['id'];?></td>
+              <td><?=$row['supplier'];?></td>
+              <td><?=$row['product_name'];?></td>
+              <td><?=$row['quantity']."Gallons";?></td>
+              <td><?="$".$row['price'];?></td>
+            </tr>
+            <?php endforeach;?>
+          </tbody>
+        </table>
+      </div>
       <div class="stock-btn">
         <button id="place-order-btn" class="btn-1">PLACE ORDER</button>
         <button id="generate-receipt-btn" class="btn-1">GENERATE RECEIPT</button>
@@ -92,5 +105,47 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 }else if($pageinfo == "settings"){
     echo "This is the page to add new users, passwords, change anything in the database etc page.";
 }
+
+
+ // TESTING OUT FORM SUBMISSION AND UPDATING DATABASE
+    // $_GET['insert'] = "Nothing as yet";
+    // echo $_GET['insert'];
+
+  
+
+  if (isset($_GET['insert'], $_POST['supplier'],$_POST['product-name'], $_POST['quantity'], $_POST['price'] ) || isset($_POST['id'])){
+    
+    $button = $_GET['insert'];
+
+
+    if($button == "submit-add"){
+      $supplier = $_POST['supplier'];
+      $product_name = $_POST['product-name'];
+      $quantity = $_POST['quantity'];
+      $price = $_POST['price'];
+      $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+      $sql = "INSERT INTO `products`(supplier, product_name, quantity, price)
+              VALUES ('$supplier','$product_name','$quantity', '$price')";
+      $conn->exec($sql);
+      echo "New record added";
+      header("Location: ../HTMLFiles/admin-homepage.html");
+      exit();
+    }else if ($button == "submit-update"){
+
+      $id = $_POST['id'];
+      $supplier = $_POST['supplier'];
+      $product_name = $_POST['product-name'];
+      $quantity = $_POST['quantity'];
+      $price = $_POST['price'];
+      $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+      $sql = "UPDATE `products`SET supplier='$supplier', product_name='$product_name', quantity='$quantity', price='$price'
+              WHERE id=$id";
+      $conn->exec($sql);
+      echo "New record updated";
+      header("Location: ../HTMLFiles/admin-homepage.html");
+      exit();
+
+    }
+  }
 
 ?>

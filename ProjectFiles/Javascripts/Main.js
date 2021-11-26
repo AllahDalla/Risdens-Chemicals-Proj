@@ -7,6 +7,14 @@
 window.onload = function(){
     buttonFucntions()
     // alert("Click a sidebar button and see what it does. Analyze code. This is the format we are using. Works well as you can see")
+    console.log(window.performance.navigation.type)
+    if (window.performance.navigation.type == 0){
+        var page = document.getElementById("MS-btn").click()
+        console.log(page)
+    }
+
+
+
 }
 
 
@@ -23,7 +31,7 @@ function buttonFucntions(){
     var mainarea = document.getElementById("stock-result") // gets main area where each page is going to be displayed using AJAX
 
     sidebarManageStock.addEventListener("click", async function(e){
-        e.target.preventDefault;
+        e.preventDefault();
 
         var url = "../PhpApi/admin-page.php?page=managestock" //url made to send query to php file, query is designed as page= <page name>
 
@@ -47,7 +55,7 @@ function buttonFucntions(){
     })
 
     sidebarManageOrder.addEventListener("click", async function(f){
-        f.target.preventDefault;
+        f.preventDefault();
 
         var url = "../PhpApi/admin-page.php?page=manageorder"
 
@@ -70,7 +78,7 @@ function buttonFucntions(){
     })
 
     sidebarGenFinRep.addEventListener("click", async function(g){
-        g.target.preventDefault;
+        g.preventDefault();
 
         var url = "../PhpApi/admin-page.php?page=financialreport" //url made to send query to php file, query is designed as page= <page name>
 
@@ -94,7 +102,7 @@ function buttonFucntions(){
     })
 
     sidebarSettings.addEventListener("click", async function(h){
-        h.target.preventDefault;
+        h.preventDefault();
 
         var url = "../PhpApi/admin-page.php?page=settings" //url made to send query to php file, query is designed as page= <page name>
 
@@ -127,15 +135,24 @@ function managestockButtonFunction(){
 
 
     addStock.addEventListener("click", async function(e){
-        e.target.preventDefault;
+        e.preventDefault();
 
         var url = "../PhpApi/managestockbuttonfunctions.php?button=add"
+
+        result.innerHTML = ""
 
         await fetch(url)
             .then(async response =>{
                 if(response.ok){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
+
+                    //COLLECTING DATA TO INSERT INTO DATABASE FROM USER ADD STOCK FIELD
+                    var submit = document.getElementById("submit-btn")
+                    submit.addEventListener('click', async function(event){
+                        alert("Record has been added")                  
+                    })
+
                     return;
 
                 }else{
@@ -148,15 +165,23 @@ function managestockButtonFunction(){
     })
 
     updateStock.addEventListener("click", async function(f){
-        f.target.preventDefault;
+        f.preventDefault();
 
         var url = "../PhpApi/managestockbuttonfunctions.php?button=update"
+
+        result.innerHTML = ""
 
         await fetch(url)
             .then(async response =>{
                 if(response.ok){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
+
+                    var submit = document.getElementById("submit-btn")
+                    submit.addEventListener('click', async function(event){
+                        alert("Record has been updated")                  
+                    })
+
                     return;
 
                 }else{
@@ -178,7 +203,7 @@ function manageOrderButtonFunction(){
 
 
     placeOrder.addEventListener("click", async function(e){
-        e.target.preventDefault;
+        e.preventDefault();
 
         var url = "../PhpApi/manageorderbuttonfunctions.php?button=place-order"
 
@@ -199,7 +224,7 @@ function manageOrderButtonFunction(){
     })
 
     generateReceipt.addEventListener("click", async function(f){
-        f.target.preventDefault;
+        f.preventDefault();
 
         var url = "../PhpApi/manageorderbuttonfunctions.php?button=generate-receipt"
 
@@ -220,7 +245,7 @@ function manageOrderButtonFunction(){
     })
 
     viewSchedule.addEventListener("click", async function(f){
-        f.target.preventDefault;
+        f.preventDefault();
 
         var url = "../PhpApi/manageorderbuttonfunctions.php?button=view-schedule"
 
@@ -240,3 +265,25 @@ function manageOrderButtonFunction(){
             })
     })
 }
+
+
+// THIS FUNCTION IS BUILT TO REOPEN A PAGE WITH THE CURRENT STATS UPON REDIRETION
+// FROM PHP PAGE SO THAT THE USER DOES NOT NEED TO CLICK BACK THE SIDEBAR BUTTONS TO REFRESH PAGE
+// THIS IS A TEST FUNCTION, IT MAY OR MAY NOT BE USED
+
+function refresh(a){
+    if (a === undefined){
+        var clicked = 0
+    }else{
+        var clicked = a
+    }
+
+    if (clicked == 1){
+        window.onload = function(){
+            var page = document.getElementById("MS-btn")
+            page.click()
+        }
+        
+    }
+}
+
