@@ -1,8 +1,9 @@
 /* This is where a webpage is going to be styled */
+
 html{
   background: #90DBE5;
 }
-label{
+/* label{
 margin-left:5%;
 margin-bottom:-1.1%;
 font-family: Roboto;
@@ -121,7 +122,7 @@ background-color: gray;
 
 /* CUSTOMER */
 
-#MONA_CUS_btn{
+/* #MONA_CUS_btn{
   position: absolute;
   width: 12rem;
   height: 3.75rem;
@@ -148,9 +149,9 @@ background-color: gray;
 }
 #MONA_STAFF_btn:hover{
   background-color:rgb(146, 143, 143) ;
-}
+} */ 
 /* STAFF */
-
+/* 
 #MONA_STAFF_btn{
   position: absolute;
   width: 8rem;
@@ -171,10 +172,10 @@ background-color: gray;
 
   color: #FFFFFF;
 }
-  
+   */
 
 /* WHO ARE YOU ? */
-
+/* 
 .MONA_title {
   position: absolute; 
   width: 59%;
@@ -189,7 +190,7 @@ background-color: gray;
 
   color: #000000;
   
-}
+} */
   
 html {
 height: 100%;
