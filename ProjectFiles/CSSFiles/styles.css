@@ -179,6 +179,196 @@ a[href=""]:hover {
     color: #0000ff;
   }
 }
+/* Ramona's part  */
+label{
+margin-left:5%;
+margin-bottom:-1.1%;
+font-family: Roboto;
+font-size: 100%;
+}
+
+#MONA_box{
+  position: absolute;
+  left: 17.46%;
+  right: 17.46%;
+  top: 24.22%;
+  bottom: 21.09%;
+  width: 60%;
+
+  background: #7AECE5;
+  border: 0.25rem solid #000000;
+  box-shadow: 1.1875rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25);
+  border-radius: 47px;
+}
+#MONA_btn-box{
+  display: block;
+}
+#items-center{
+  position: absolute;
+  left: 21.46%;
+  right: 21.46%;
+  top: 24.22%;
+  bottom: 21.09%;
+}
+
+.u_name{
+  margin-top:5%;
+}
+.u_pwd{
+  margin-top:5%;
+  margin-bottom:2.1%;
+}
+
+#MONA_STAFF_box{
+  margin-top:-5%;
+  padding-top: 3.75rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 21.875rem;
+  background: #64C0BB;
+  border: 0.25rem solid #000000;
+  box-shadow: 1.1875rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+input[type=text]{
+width: 90%;
+padding: 0.75rem 1.25rem;
+margin-left: 5%;
+
+font-size:100%;
+font-family: 'Times New Roman', Times, serif;
+
+
+border: 1px solid black;
+box-sizing: border-box;
+box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+
+}
+#roles{
+margin-left:5%;
+width: 90%;
+font-family: 'Times New Roman', Times, serif;
+font-weight: normal;
+font-size:100%;
+background: #FFFFFF;
+border: 1px solid #000000;
+border-radius: 0px;
+box-shadow:  0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+#textbox1{
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow:  0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+#textbox2{
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow:  0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+::placeholder { 
+  color:black;
+}
+
+input[type=submit] {
+margin-top: 2%;
+margin-left:40%;
+width: 20%;
+height: 10%;
+text-align: center;
+border: 1px solid #000000;
+border-radius: 5px;
+background-color: #4B7DDF;
+}
+input[type=submit]:hover {
+background-color: gray;
+}
+
+#MONA_line{
+  position: absolute;
+  width: 15.125rem;
+  left:36.5%;
+  top: 55%;
+
+  border: 0.125rem solid #000000;
+  background:black;
+  transform: rotate(90deg);
+
+  
+}
+
+/* CUSTOMER */
+
+/* #MONA_CUS_btn{
+  position: absolute;
+  width: 12rem;
+  height: 3.75rem;
+
+  left: 18%;
+  top: 45.02%;
+  bottom: 48.44%;
+
+  background: #4B7DDF;
+  border-style: solid;
+  border-radius: 19px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.105em;
+
+  color: #FFFFFF;
+}
+#MONA_CUS_btn:hover{
+  background-color: rgb(146, 143, 143);
+}
+#MONA_STAFF_btn:hover{
+  background-color:rgb(146, 143, 143) ;
+} */ 
+/* STAFF */
+/* 
+#MONA_STAFF_btn{
+  position: absolute;
+  width: 8rem;
+  height: 3.75rem;
+
+  left: 62.78%;
+  top: 45.02%;
+  bottom: 48.44%;
+  
+  background: #4B7DDF;
+  border-style: solid;
+  border-radius: 1.1875rem;
+
+  font-family: Roboto;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.105em;
+
+  color: #FFFFFF;
+}
+   */
+
+/* WHO ARE YOU ? */
+/* 
+.MONA_title {
+  position: absolute; 
+  width: 59%;
+  height: 4.25rem;
+  left: 20%;
+
+  font-family: Roboto;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
+  text-align: center;
+  letter-spacing: 0.105em;
+
+  color: #000000;
+  
+}
+
 
 .active {
   animation: textColorChange 2s infinite;
