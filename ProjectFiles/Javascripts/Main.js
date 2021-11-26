@@ -24,6 +24,7 @@ function buttonFucntions(){
     var sidebarManageOrder = document.getElementById("MO-btn")
     var sidebarGenFinRep = document.getElementById("GFR-btn")
     var sidebarSettings = document.getElementById("settings-btn")
+    var sidebarLogout = document.getElementById("logout-btn")
 
     // gets buttons that are requested from php files after fetching ofcourse
     var manageStockAddStockBtn = document.getElementById("add-stock-btn") //  gets the manage stock button that comes up on the manage stock page
@@ -32,6 +33,11 @@ function buttonFucntions(){
 
     sidebarManageStock.addEventListener("click", async function(e){
         e.preventDefault();
+        sidebarManageStock.className = "active"
+        sidebarManageOrder.className = "pulsate"
+        sidebarGenFinRep.className = "pulsate"
+        sidebarSettings.className = "pulsate"
+        sidebarLogout.className = "pulsate"
 
         var url = "../PhpApi/admin-page.php?page=managestock" //url made to send query to php file, query is designed as page= <page name>
 
@@ -56,6 +62,11 @@ function buttonFucntions(){
 
     sidebarManageOrder.addEventListener("click", async function(f){
         f.preventDefault();
+        sidebarManageStock.className = "pulsate"
+        sidebarManageOrder.className = "active"
+        sidebarGenFinRep.className = "pulsate"
+        sidebarSettings.className = "pulsate"
+        sidebarLogout.className = "pulsate"
 
         var url = "../PhpApi/admin-page.php?page=manageorder"
 
@@ -79,6 +90,11 @@ function buttonFucntions(){
 
     sidebarGenFinRep.addEventListener("click", async function(g){
         g.preventDefault();
+        sidebarManageStock.className = "pulsate"
+        sidebarManageOrder.className = "pulsate"
+        sidebarGenFinRep.className = "active"
+        sidebarSettings.className = "pulsate"
+        sidebarLogout.className = "pulsate"
 
         var url = "../PhpApi/admin-page.php?page=financialreport" //url made to send query to php file, query is designed as page= <page name>
 
@@ -103,6 +119,11 @@ function buttonFucntions(){
 
     sidebarSettings.addEventListener("click", async function(h){
         h.preventDefault();
+        sidebarManageStock.className = "pulsate"
+        sidebarManageOrder.className = "pulsate"
+        sidebarGenFinRep.className = "pulsate"
+        sidebarSettings.className = "active"
+        sidebarLogout.className = "pulsate"
 
         var url = "../PhpApi/admin-page.php?page=settings" //url made to send query to php file, query is designed as page= <page name>
 

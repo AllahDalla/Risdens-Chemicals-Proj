@@ -168,7 +168,7 @@ a[href=""]:hover {
 
 /* Animations */
 
-/* @keyframes textColorChange {
+@keyframes textColorChange {
   0% {
     color: #0000ff;
   }
@@ -178,8 +178,11 @@ a[href=""]:hover {
   100% {
     color: #0000ff;
   }
-} */
-/* Use @-webkit-keyframes for Safari/Chrome */
+}
+
+.active {
+  animation: textColorChange 2s infinite;
+}
 
 .pulsate:hover {
   background: whitesmoke;
@@ -191,10 +194,6 @@ a[href=""]:hover {
   transform: scale(1);
   animation: pulse-red 2s infinite;
 }
-
-/* .pulsate:hover {
-  animation: textColorChange 2s infinite;
-} */
 
 @keyframes pulse-red {
   0% {
