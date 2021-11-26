@@ -12,13 +12,13 @@ if ($button == "add"){
           action="../PhpApi/admin-page.php?insert=submit-add"
           method="post">
           <label >Supplier</label>
-          <input type="text" id="supplier" name="supplier" />
+          <input type="text" id="supplier" name="supplier" required/>
           <label for="product-name">Product Name</label>
-          <input type="text" id="product-name" name="product-name" />
+          <input type="text" id="product-name" name="product-name" required/>
           <label for="quantity">Quantity</label>
-          <input type="text" id="quantity" name="quantity" />
+          <input type="text" id="quantity" name="quantity" required/>
           <label for="price">Price</label>
-          <input type="text" id="price" name="price" />
+          <input type="text" id="price" name="price" required/>
           <input type="submit" id="submit-btn" value="submit" />
         </form>
         
@@ -30,7 +30,7 @@ if ($button == "add"){
     action="../PhpApi/admin-page.php?insert=submit-update"
     method="post">
     <label for="id">ID</label>
-    <input type="text" id="id" name="id">
+    <input type="text" id="id" name="id" required>
     <label for="supplier">Supplier</label>
     <input type="text" id="supplier" name="supplier" />
     <label for="product-name">Product Name</label>
