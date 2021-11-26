@@ -10,6 +10,7 @@ include '../Databases/database.php';
 
 
 
+
 $pageinfo = $_GET['page'];
 
 if($pageinfo == "managestock"){ //checks to see which page is being requested to be displayed. This is how the pages will be requested from the sidebar buttons
@@ -144,6 +145,48 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       echo "New record updated";
       header("Location: ../HTMLFiles/admin-homepage.html");
       exit();
+
+    }
+  }
+ 
+  if(isset($_GET['insert'],$_POST['title'], $_POST['customer-name'], $_POST['tele'], $_POST['address'], $_POST['product-name'], $_POST['quantity'], $_POST['price'], $_POST['discount'])){
+    $button = $_GET['insert'];
+  
+    if($button == "submit-place-order"){
+      $title = $_POST['title'];
+      $customer_name = $_POST['customer-name'];
+      $tele = $_POST['tele'];
+      $addr = $_POST['address'];
+      $product_name = $_POST['product-name'];
+      $quantity = $_POST['quantity'];
+      $price = $_POST['price'];
+      $discount = $_POST['discount'];
+
+  
+      $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+      $sql = "INSERT INTO `transactions`(title, customer_name, telephone, delivery_address, product_name, quantity, price , discount)  
+              VALUES ('$title','$customer_name', '$tele', '$addr', '$product_name', '$quantity', '$price', '$discount' )";
+      $conn->exec($sql);
+      echo "New record updated";
+
+      $stmt= $conn->query("SELECT id FROM `transactions` WHERE title= '$title' AND customer_name= '$customer_name' AND delivery_address= '$addr' AND telephone= '$tele' AND product_name= '$product_name' AND price= '$price'");
+
+      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      $id_search =  $results[0]['id'];
+      $oder_number = $id_search."000";
+      $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+      $sql = "UPDATE `transactions` SET order_number= '$oder_number'
+              WHERE id= '$id_search'";
+
+      $conn->exec($sql);
+      if (isset($_GET['redirect'])){
+        echo "2";
+      }
+      
+      header("Location: ../HTMLFiles/admin-homepage.html");
+      exit();
+
 
     }
   }
