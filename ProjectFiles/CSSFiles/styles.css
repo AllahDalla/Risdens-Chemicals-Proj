@@ -17,9 +17,9 @@ body {
   grid-column-start: 2;
   grid-row-start: 2;
   grid-row-end: -1;
-  /* border: 2px solid orange; */
+  border: 2px solid orange;
   text-align: center;
-  max-height: 100vh;
+  height: 100vh;
   overflow-y: auto;
 }
 
@@ -162,9 +162,9 @@ a[href=""]:hover {
   font-size: 30px;
 }
 
-#result {
+/* #result {
   padding-top: 10px;
-}
+} */
 
 /* Animations */
 
