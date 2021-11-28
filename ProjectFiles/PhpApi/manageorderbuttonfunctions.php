@@ -28,6 +28,8 @@ if ($button == "place-order"){
           <input type="text" id="price" name="price" />
           <label for="discount">Discount</label>
           <input type="text" id="discount" name="discount" />
+          <label for="delivery">Delivery Date</label>
+          <input type="date" id="delivery" name="delivery" />
           <input type="submit" id="submit-btn" value="submit" />
         </form>
         
@@ -57,6 +59,9 @@ if ($button == "place-order"){
             <td>Quantity</td>
             <td>Price</td>
             <td>Discount</td>
+            <td>Payment</td>
+            <td>Change</td>
+            <td>Delivery Date</td>
             <td>Transaction Time</td>
 
           </tr>
@@ -74,6 +79,9 @@ if ($button == "place-order"){
             <td><?=$row['quantity'];?></td>
             <td><?="$".$row['price'];?></td>
             <td><?=$row['discount']."%";?></td>
+            <td><?=$row['payment']?></td>
+            <td><?=$row['change']?></td>
+            <td><?=$row['delivery_date']?></td>
             <td><?=$row['transaction_time']?></td>
           </tr>
           <?php endforeach;?>
@@ -81,10 +89,14 @@ if ($button == "place-order"){
       </table>
     </div>
   <form
-    action="../PhpApi/admin-page.php?insert=generate-receipt"
+    action="../PhpApi/admin-page.php?insert=submit-generate-receipt"
     method="post">
     <label for="id">ID</label>
     <input type="text" id="id" name="id" required/>
+    <label for="id">Payment</label>
+    <input type="text" id="payment" name="payment" required/>
+    <label for="id">Change</label>
+    <input type="text" id="change" name="change" required/>
     <label for="email">Email</label>
     <input type="email" id="email" name="email" palceholder="someone@gmail.com" required/>
     <input type="submit" id="submit-btn" value="submit" />

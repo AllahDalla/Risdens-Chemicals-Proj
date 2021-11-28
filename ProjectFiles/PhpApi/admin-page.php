@@ -173,11 +173,12 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $quantity = $_POST['quantity'];
       $price = $_POST['price'];
       $discount = $_POST['discount'];
+      $delivery = $_POST['delivery'];
 
   
       $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-      $sql = "INSERT INTO `transactions`(title, customer_name, telephone, delivery_address, product_name, quantity, price , discount, transaction_time)  
-              VALUES ('$title','$customer_name', '$tele', '$addr', '$product_name', '$quantity', '$price', '$discount', now())";
+      $sql = "INSERT INTO `transactions`(title, customer_name, telephone, delivery_address, product_name, quantity, price , discount, delivery_date, transaction_time)  
+              VALUES ('$title','$customer_name', '$tele', '$addr', '$product_name', '$quantity', '$price', '$discount', '$delivery', now())";
       $conn->exec($sql);
       echo "New record updated";
 
