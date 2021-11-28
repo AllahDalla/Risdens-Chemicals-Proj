@@ -56,6 +56,9 @@ function buttonFucntions(){
         sidebarSettings.className = "pulsate"
         sidebarLogout.className = "pulsate"
 
+       
+
+
         var url = "../PhpApi/admin-page.php?page=manageorder"
 
         await fetch(url)
@@ -329,9 +332,10 @@ window.onload = async function(){
             sessionStorage.removeItem("page")
         }else if(sessionStorage.getItem("page") == 2){
                 if(sessionStorage.getItem("schedule") == "yes"){
-                   var page = document.getElementById("MO-btn").click()
-                   scheduler()
-
+                    var page = document.getElementById("MO-btn").click()
+                    syncDelay(700)
+                    // var button = document.getElementById("view-schedule-btn").click()
+                    scheduler()
                 }else{
                     var page = document.getElementById("MO-btn").click()
                     sessionStorage.removeItem("page")
@@ -352,8 +356,9 @@ async function scheduler(){
         .then(async response => {
             if(response.ok){
                 var input_field = await response.text()
-                var result = document.getElementById("stock-result")
-
+                // syncDelay(700)
+                var result = document.getElementById("result-area")
+                // console.log(result)
                 result.innerHTML = ""+input_field
                 return;
             }else{
@@ -364,3 +369,19 @@ async function scheduler(){
             console.log("There was error with the connection: "+error)
         })
 }
+
+function syncDelay(milliseconds){
+
+    var start = new Date().getTime()
+    // console.log("This is the start value : "+start)
+    var end = 0
+    while((end-start) < milliseconds){
+        // console.log("This is the milliseconds : "+milliseconds)
+        // console.log("This is end-start value"+(end-start))
+        end = new Date().getTime()
+    }
+
+}
+// console.log("Before Delay")
+// syncDelay(700)
+// console.log("After Delay")

@@ -48,7 +48,11 @@ thead {
   border: 0.2em solid #d3d3d3;
 }
 
-#result-area h1{
+#h2 {
+  margin-left: 40%;
+}
+
+#result-area h1 {
   text-align: center;
   font-family: Helvetica;
   font-size: 2em;
@@ -59,7 +63,7 @@ thead {
   color: #000000;
   background-color: #ffffff;
 }
-#result-area{
+#result-area {
   text-align: left;
   font-family: Helvetica;
   font-size: medium;
@@ -70,9 +74,9 @@ thead {
   color: #000000;
   background-color: #ffffff;
 }
-#result-area label{
+#result-area label {
   /* margin-top:5%; */
-  margin-left:17%;
+  margin-left: 17%;
 }
 
 .stock-btn {
@@ -287,7 +291,7 @@ input[type="mona_text"] {
   color: black;
 }
 
-#m_submit{
+#m_submit {
   margin-top: 2%;
   margin-left: 40%;
   width: 20%;
@@ -386,7 +390,8 @@ input[type="mona_text"] {
 }
 /* Ramona's CSS for Manage Stock */
 
-input[type="text"], input[type="email"]{
+input[type="text"],
+input[type="email"] {
   width: 40%;
   padding: 5px 10px;
   margin-top: 1%;
@@ -398,20 +403,20 @@ input[type="text"], input[type="email"]{
 
   /* border: 1px solid black; */
 }
-input[type="date"]{
+input[type="date"] {
   margin-top: 1%;
   margin-left: 17%;
 }
-#submit-btn{
+#submit-btn {
   width: 10rem;
   height: 10%;
   margin-left: 40%;
-  color:white;
-  background-color:  #0c71e0;
+  color: white;
+  background-color: #0c71e0;
   font-family: Helvetica;
   font-size: medium;
 
-  border-radius:5px;
+  border-radius: 5px;
 }
 
 .active {
