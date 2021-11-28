@@ -24,30 +24,43 @@
     <div class="sidebar">
       <div>
         <i class="fa fa-database" aria-hidden="true"></i>
-        <a href="#" id="MS-btn">Manage Stock</a>
+        <a href="" class="pulsate" id="MS-btn">Manage Stock</a>
       </div>
 
       <div>
         <i class="fa fa-usd" aria-hidden="true"></i>
-        <a href="#" id="MO-btn">Manage Order</a>
+        <a href="" class="pulsate" id="MO-btn">Manage Order</a>
       </div>
 
       <div>
         <i class="fa fa-file-excel-o" aria-hidden="true"></i>
-        <a href="#" id="GFR-btn">Generate Report</a>
+        <a href="" class="pulsate" id="GFR-btn">Generate Report</a>
       </div>
 
       <div>
         <i class="fa fa-cog" aria-hidden="true"></i>
-        <a href="#" id="settings-btn">Settings</a>
+        <a href="" class="pulsate" id="settings-btn">Settings</a>
       </div>
 
       <div>
         <i class="fa fa-sign-out"></i>
-        <a href="#" id="logout-btn">Logout</a>
+        <a href="" class="pulsate" id="logout-btn">Logout</a>
       </div>
     </div>
     <!-- This is where all data refreshes, main space, main function will occur -->
-    <div id="stock-result" class="main-area"></div>
+    <div id="stock-result" class="main-area">
+      <div class="animation">
+        <div class="blobs-container">
+          <div class="blob white"></div>
+          <div class="blob red"></div>
+          <div class="blob orange"></div>
+          <div class="blob yellow"></div>
+          <div class="blob blue"></div>
+          <div class="blob green"></div>
+          <div class="blob purple"></div>
+          <div class="blob"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

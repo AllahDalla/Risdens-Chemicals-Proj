@@ -2,12 +2,8 @@
 
 // Starting the real coding for pages here
 
+var redirect_page_count = 0;
 
-// This right here runs the entire script. All functions made will be called inside this function
-window.onload = function(){
-    buttonFucntions()
-    // alert("Click a sidebar button and see what it does. Analyze code. This is the format we are using. Works well as you can see")
-}
 
 
 function buttonFucntions(){
@@ -16,6 +12,7 @@ function buttonFucntions(){
     var sidebarManageOrder = document.getElementById("MO-btn")
     var sidebarGenFinRep = document.getElementById("GFR-btn")
     var sidebarSettings = document.getElementById("settings-btn")
+    var sidebarLogout = document.getElementById("logout-btn")
 
     // gets buttons that are requested from php files after fetching ofcourse
     var manageStockAddStockBtn = document.getElementById("add-stock-btn") //  gets the manage stock button that comes up on the manage stock page
@@ -23,7 +20,12 @@ function buttonFucntions(){
     var mainarea = document.getElementById("stock-result") // gets main area where each page is going to be displayed using AJAX
 
     sidebarManageStock.addEventListener("click", async function(e){
-        e.target.preventDefault;
+        e.preventDefault();
+        sidebarManageStock.className = "active"
+        sidebarManageOrder.className = "pulsate"
+        sidebarGenFinRep.className = "pulsate"
+        sidebarSettings.className = "pulsate"
+        sidebarLogout.className = "pulsate"
 
         var url = "../PhpApi/admin-page.php?page=managestock" //url made to send query to php file, query is designed as page= <page name>
 
@@ -47,7 +49,12 @@ function buttonFucntions(){
     })
 
     sidebarManageOrder.addEventListener("click", async function(f){
-        f.target.preventDefault;
+        f.preventDefault();
+        sidebarManageStock.className = "pulsate"
+        sidebarManageOrder.className = "active"
+        sidebarGenFinRep.className = "pulsate"
+        sidebarSettings.className = "pulsate"
+        sidebarLogout.className = "pulsate"
 
         var url = "../PhpApi/admin-page.php?page=manageorder"
 
@@ -70,7 +77,12 @@ function buttonFucntions(){
     })
 
     sidebarGenFinRep.addEventListener("click", async function(g){
-        g.target.preventDefault;
+        g.preventDefault();
+        sidebarManageStock.className = "pulsate"
+        sidebarManageOrder.className = "pulsate"
+        sidebarGenFinRep.className = "active"
+        sidebarSettings.className = "pulsate"
+        sidebarLogout.className = "pulsate"
 
         var url = "../PhpApi/admin-page.php?page=financialreport" //url made to send query to php file, query is designed as page= <page name>
 
@@ -94,7 +106,12 @@ function buttonFucntions(){
     })
 
     sidebarSettings.addEventListener("click", async function(h){
-        h.target.preventDefault;
+        h.preventDefault();
+        sidebarManageStock.className = "pulsate"
+        sidebarManageOrder.className = "pulsate"
+        sidebarGenFinRep.className = "pulsate"
+        sidebarSettings.className = "active"
+        sidebarLogout.className = "pulsate"
 
         var url = "../PhpApi/admin-page.php?page=settings" //url made to send query to php file, query is designed as page= <page name>
 
@@ -127,15 +144,25 @@ function managestockButtonFunction(){
 
 
     addStock.addEventListener("click", async function(e){
-        e.target.preventDefault;
+        e.preventDefault();
 
         var url = "../PhpApi/managestockbuttonfunctions.php?button=add"
+
+        result.innerHTML = ""
 
         await fetch(url)
             .then(async response =>{
                 if(response.ok){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
+
+                    //COLLECTING DATA TO INSERT INTO DATABASE FROM USER ADD STOCK FIELD
+                    var submit = document.getElementById("submit-btn")
+                    submit.addEventListener('click', async function(event){
+                        sessionStorage.setItem("page", "1")
+                        alert("Record has been added")                  
+                    })
+
                     return;
 
                 }else{
@@ -148,15 +175,24 @@ function managestockButtonFunction(){
     })
 
     updateStock.addEventListener("click", async function(f){
-        f.target.preventDefault;
+        f.preventDefault();
 
         var url = "../PhpApi/managestockbuttonfunctions.php?button=update"
+
+        result.innerHTML = ""
 
         await fetch(url)
             .then(async response =>{
                 if(response.ok){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
+
+                    var submit = document.getElementById("submit-btn")
+                    submit.addEventListener('click', async function(event){
+                        sessionStorage.setItem("page", "1")
+                        alert("Record has been updated")                  
+                    })
+
                     return;
 
                 }else{
@@ -178,7 +214,7 @@ function manageOrderButtonFunction(){
 
 
     placeOrder.addEventListener("click", async function(e){
-        e.target.preventDefault;
+        e.preventDefault();
 
         var url = "../PhpApi/manageorderbuttonfunctions.php?button=place-order"
 
@@ -187,6 +223,13 @@ function manageOrderButtonFunction(){
                 if(response.ok){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
+
+                    var submit = document.getElementById("submit-btn")
+                    submit.addEventListener('click', async function(event){
+                        sessionStorage.setItem("page","2");
+                        alert("Order has been placed")                  
+                    })
+
                     return;
 
                 }else{
@@ -199,7 +242,7 @@ function manageOrderButtonFunction(){
     })
 
     generateReceipt.addEventListener("click", async function(f){
-        f.target.preventDefault;
+        f.preventDefault();
 
         var url = "../PhpApi/manageorderbuttonfunctions.php?button=generate-receipt"
 
@@ -220,7 +263,7 @@ function manageOrderButtonFunction(){
     })
 
     viewSchedule.addEventListener("click", async function(f){
-        f.target.preventDefault;
+        f.preventDefault();
 
         var url = "../PhpApi/manageorderbuttonfunctions.php?button=view-schedule"
 
@@ -239,4 +282,23 @@ function manageOrderButtonFunction(){
                 console.log("There was error with the connection: "+error)
             })
     })
+}
+
+
+// This right here runs the entire script. All functions made will be called inside this function
+window.onload = async function(){
+    buttonFucntions()
+    
+    console.log(window.performance.navigation.type)
+    if (window.performance.navigation.type == 0){
+          
+        if (sessionStorage.getItem("page") == 1){
+            var page = document.getElementById("MS-btn").click()
+            sessionStorage.removeItem("page")
+        }else if(sessionStorage.getItem("page") == 2){
+            var page = document.getElementById("MO-btn").click()
+            sessionStorage.removeItem("page")
+        }
+   
+    }
 }

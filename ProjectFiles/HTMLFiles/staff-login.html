@@ -4,28 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSSFiles/monastyles.css" />
+    <link rel="stylesheet" href="../CSSFiles/styles.css" />
     <script src="../Javascripts/Login.js" type="text/javascript"></script>
     <title>STAFF LOGIN</title>
   </head>
-  <body>
+  <body class="Ramona-body">
     <div id="items-center">
-      <div id="MONA_STAFF_box">
-        <label for="roles">Please select user type...</label>
-        <select name="roles" id="roles">
-          <option value="cashier">CASHIER</option>
-          <option value="admin">ADMIN</option>
-        </select>
-        <div class="u_name">
-          <label for="username">Enter username</label>
-          <input type="text" id="username" placeholder="NAME" />
+      <form action="#">
+        <div id="MONA_STAFF_box">
+          <label for="roles">Please select user type...</label>
+          <select name="roles" id="roles">
+            <option value="cashier">CASHIER</option>
+            <option value="admin">ADMIN</option>
+          </select>
+          <div class="u_name">
+            <label for="username">Enter username</label>
+            <input type="mona_text" id="username" placeholder="NAME" />
+          </div>
+          <div class="u_pwd">
+            <label for="pwd">Enter password</label>
+            <input type="mona_text" id="pwd" placeholder="PASSWORD" />
+          </div>
+          <input type="mona_submit" value="Submit" />
         </div>
-        <div class="u_pwd">
-          <label for="pwd">Enter password</label>
-          <input type="text" id="pwd" placeholder="PASSWORD" />
-        </div>
-        <input type="submit" value="Submit" id="submit-staff-login" />
-      </div>
+      </form>
     </div>
   </body>
 </html>
