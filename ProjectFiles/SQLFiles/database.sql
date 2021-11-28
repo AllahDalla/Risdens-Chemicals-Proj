@@ -45,5 +45,23 @@ CREATE TABLE `transactions` (
   `quantity` int(40) NOT NULL,
   `price` int(40) NOT NULL,
   `discount` int(20) NOT NULL,
+  `transaction_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Table structure for table `logs`
+--
+
+DROP TABLE IF EXISTS `logs`;
+CREATE TABLE `logs` (
+  `id` int(11) NOT NULL auto_increment,
+  `product_id` int(11) NOT NULL,
+  `changed_supplier` varchar(64) NOT NULL default '',
+  `changed_product_name` varchar(64) NOT NULL,
+  `changed_quantity` int(35) NOT NULL,
+  `changed_price` int(20) NOT NULL,
+  `operation` varchar(64) NOT NULL,
+  `log_time` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
