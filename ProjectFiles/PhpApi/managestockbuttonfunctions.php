@@ -63,6 +63,7 @@ if ($button == "add"){
             <td>Quantity</td>
             <td>Price</td>
             <td>Status</td>
+            <td>Time</td>
           </tr>
         </th>
         <tbody>
@@ -75,6 +76,7 @@ if ($button == "add"){
             <td><?=$row['changed_quantity'];?></td>
             <td><?='$'.$row['changed_price'];?></td>
             <td><?=$row['operation'];?></td>
+            <td><?=$row['log_time'];?></td>
           </tr>
           <?php endforeach;?>
         </tbody>

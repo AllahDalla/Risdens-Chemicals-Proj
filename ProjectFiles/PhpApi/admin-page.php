@@ -108,17 +108,9 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
     echo "This is the page to add new users, passwords, change anything in the database etc page.";
 }
 
-
- // TESTING OUT FORM SUBMISSION AND UPDATING DATABASE
-    // $_GET['insert'] = "Nothing as yet";
-    // echo $_GET['insert'];
-
-  
-
   if (isset($_GET['insert'], $_POST['supplier'],$_POST['product-name'], $_POST['quantity'], $_POST['price'] ) || isset($_POST['id'])){
     
     $button = $_GET['insert'];
-
 
     if($button == "submit-add"){
       $supplier = $_POST['supplier'];
@@ -126,15 +118,22 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $quantity = $_POST['quantity'];
       $price = $_POST['price'];
       $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
       $sql = "INSERT INTO `products`(supplier, product_name, quantity, price)
               VALUES ('$supplier','$product_name','$quantity', '$price')";
       
-      $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation)
-      VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Added')";
-      
       $conn->exec($sql);
+
+      $stmt= $conn->query("SELECT id FROM `products` WHERE supplier= '$supplier' AND product_name= '$product_name' AND quantity= '$quantity' AND price = '$price'");
+      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $id =  $results[0]['id'];
+
+      $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation, log_time)
+      VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Added', now())";
+
       $conn->exec($update_tracker_sql);
       echo "New record added";
+
       header("Location: ../HTMLFiles/admin-homepage.html");
       exit();
     }else if ($button == "submit-update"){
@@ -149,8 +148,8 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $sql = "UPDATE `products`SET supplier='$supplier', product_name='$product_name', quantity='$quantity', price='$price'
               WHERE id=$id";
       
-      $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation)
-      VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Updated')";
+      $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation, log_time)
+      VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Updated', now())";
       
       $conn->exec($sql);
 
@@ -177,8 +176,8 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 
   
       $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-      $sql = "INSERT INTO `transactions`(title, customer_name, telephone, delivery_address, product_name, quantity, price , discount)  
-              VALUES ('$title','$customer_name', '$tele', '$addr', '$product_name', '$quantity', '$price', '$discount' )";
+      $sql = "INSERT INTO `transactions`(title, customer_name, telephone, delivery_address, product_name, quantity, price , discount, transaction_time)  
+              VALUES ('$title','$customer_name', '$tele', '$addr', '$product_name', '$quantity', '$price', '$discount', now())";
       $conn->exec($sql);
       echo "New record updated";
 
