@@ -72,7 +72,7 @@ if ($button == "add"){
             <td><?=$row['changed_supplier'];?></td>
             <td><?=$row['changed_product_name'];?></td>
             <td><?=$row['changed_quantity'];?></td>
-            <td><?=$row['changed_price'];?></td>
+            <td><?='$'.$row['changed_price'];?></td>
             <td><?=$row['operation'];?></td>
           </tr>
           <?php endforeach;?>
