@@ -104,6 +104,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 <?php
 }else if($pageinfo == "financialreport"){
     echo "Page is suppose to show here too. When we get it right, it shall be added in God's grace";
+    
 }else if($pageinfo == "settings"){
     echo "This is the page to add new users, passwords, change anything in the database etc page.";
 }
