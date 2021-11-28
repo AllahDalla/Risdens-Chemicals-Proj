@@ -8,6 +8,7 @@ $button = $_GET['button'];
 if ($button == "place-order"){
   # Daniel, you will be working right here
   # remove input for id
+  
 ?>       
 
         <form

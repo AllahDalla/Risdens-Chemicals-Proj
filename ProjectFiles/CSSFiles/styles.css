@@ -91,7 +91,6 @@ label,
 input {
   display: block;
   padding: 0.5em 0px;
-  align
 }
 
 #submit-btn {
@@ -399,6 +398,13 @@ input[type="mona_submit"]:hover {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
   }
+}
+/*css for forms*/
+form{
+  text-align: center;
+  align-content: center;
+  background-color: #e2ebf0;
+  text-shadow: 2px 2px #000000;
 }
 
 /* //TESTING ANIMATION */
