@@ -45,6 +45,9 @@ CREATE TABLE `transactions` (
   `quantity` int(40) NOT NULL,
   `price` int(40) NOT NULL,
   `discount` int(20) NOT NULL,
+  `payment` int(20) NULL,
+  `change` int(20) NULL,
+  `delivery_date` date NOT NULL,
   `transaction_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
