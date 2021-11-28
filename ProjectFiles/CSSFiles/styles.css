@@ -48,17 +48,9 @@ thead {
   border: 0.2em solid #d3d3d3;
 }
 
-/*#result-area {
-  text-align: center;
-  font-family: Helvetica;
-  font-size: medium;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
-  text-transform: none;
-  color: #000000;
+#result-area {
   background-color: #ffffff;
-}*/
+}
 
 .stock-btn {
   margin: 3em auto;
@@ -91,11 +83,13 @@ label,
 input {
   display: block;
   padding: 0.5em 0px;
+  
 }
 
 #submit-btn {
   width: 50%;
   margin-top: 0.6em;
+  
 }
 
 a[href=""]:hover {
@@ -162,9 +156,9 @@ a[href=""]:hover {
   font-size: 30px;
 }
 
-/* #result {
+.result {
   padding-top: 10px;
-} */
+} 
 
 /* Animations */
 
@@ -317,7 +311,7 @@ input[type="mona_submit"]:hover {
   font-style: normal;
   font-weight: normal;
   font-size: 1.5rem;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.105em;
 
   color: #ffffff;
@@ -383,6 +377,20 @@ input[type="mona_submit"]:hover {
   transform: scale(1);
   animation: pulse-red 2s infinite;
 }
+form{
+  color: #000000;
+  font-family: Roboto;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: normal;
+  height: 10px;
+  left: 40%;
+  letter-spacing: 0.105em;
+  line-height: 42px;
+  position: absolute;
+  width: 300px;
+}
+
 
 @keyframes pulse-red {
   0% {

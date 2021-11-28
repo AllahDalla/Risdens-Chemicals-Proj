@@ -45,6 +45,7 @@ form {
 input {
   border: 2px solid #000000;
   position: absolute;
+  width: 100%;
 }
 label {
   margin-left: 5%;
@@ -96,7 +97,7 @@ label {
 }
 
 input[type="text"] {
-  width: 90%;
+  width: 100%;
   padding: 12px 20px;
   margin-left: 5%;
 
