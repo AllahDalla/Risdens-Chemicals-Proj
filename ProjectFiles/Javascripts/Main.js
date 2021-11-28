@@ -295,6 +295,31 @@ function manageOrderButtonFunction(){
                 if(response.ok){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
+
+                    var submit = document.getElementById("submit-schedule-btn")
+
+                    submit.addEventListener("click", async function(event){
+                        sessionStorage.setItem("page", "2")
+                        sessionStorage.setItem("schedule", "yes")
+                        var url = "../PhpApi/EmailSchedule.php"
+                        
+                        await fetch(url)
+                            .then(response => {
+                                if(response.ok){
+                                    var input_field = await response.text()
+                                    var result = document.getElementById("schedule-area")
+
+                                    result.innerHTML = ""+input_field
+                                    return;
+                                }else{
+                                    return Promise.reject("The response was not 200. Something went wrong")
+                                }
+                            })
+                            .catch(error =>{
+                                console.log("There was error with the connection: "+error)
+                            })
+                    })
+
                     return;
 
                 }else{
@@ -319,8 +344,16 @@ window.onload = async function(){
             var page = document.getElementById("MS-btn").click()
             sessionStorage.removeItem("page")
         }else if(sessionStorage.getItem("page") == 2){
-            var page = document.getElementById("MO-btn").click()
-            sessionStorage.removeItem("page")
+            if(sessionStorage.getItem("schedule") == "yes"){
+                var page = document.getElementById("MO-btn").click()
+                var button = document.getElementById("view-schedule-btn")
+                sessionStorage.removeItem("page")
+                sessionStorage.removeItem("schedule")
+            }else{
+                var page = document.getElementById("MO-btn").click()
+                sessionStorage.removeItem("page")
+            }
+            
         }
    
     }

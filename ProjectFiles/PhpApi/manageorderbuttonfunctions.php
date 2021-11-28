@@ -95,18 +95,31 @@ if ($button == "place-order"){
     <input type="text" id="id" name="id" required/>
     <label for="id">Payment</label>
     <input type="text" id="payment" name="payment" required/>
-    <label for="id">Change</label>
-    <input type="text" id="change" name="change" required/>
     <label for="email">Email</label>
     <input type="email" id="email" name="email" palceholder="someone@gmail.com" required/>
     <input type="submit" id="submit-btn" value="submit" />
   </form>
-
+  </div>
   <?php
 
 }
 else if($button == "view-schedule"){
-    echo "This should show the schedule.";
+  ?>
+  <form action="./EmailSchedule.php?schedule=yes" method="post">
+    <label for="date">Schedule Picker</label>
+    <input type="date" name="date" id="date" required>
+    <input type="submit" value="submit" id="submit-schedule-btn" required>
+  </form>
+
+  <div id="schedule-area"></div>
+
+
+
+
+
+
+
+  <?php
 }
 
 
