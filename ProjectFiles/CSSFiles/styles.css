@@ -49,7 +49,7 @@ thead {
 }
 
 #result-area {
-  text-align: center;
+  text-align: left;
   font-family: Helvetica;
   font-size: medium;
   font-style: normal;
@@ -185,6 +185,7 @@ a[href=""]:hover {
 }
 
 label {
+  display: inline-block;
   margin-left: 5%;
   margin-bottom: -1.1%;
   font-family: Roboto;
@@ -272,17 +273,19 @@ input[type="mona_text"] {
   color: black;
 }
 
-input[type="mona_submit"] {
+#m_submit{
   margin-top: 2%;
   margin-left: 40%;
   width: 20%;
   height: 10%;
   text-align: center;
   border: 1px solid #000000;
+  font-size: 100%;
+  color: white;
   border-radius: 5px;
   background-color: #4b7ddf;
 }
-input[type="mona_submit"]:hover {
+#m_submit:hover {
   background-color: gray;
 }
 
@@ -366,6 +369,31 @@ input[type="mona_submit"]:hover {
   letter-spacing: 0.105em;
 
   color: #000000;
+}
+/* Ramona's CSS for Manage Stock */
+
+input[type="text"]{
+  width: 60%;
+  padding: 5px 10px;
+  margin-top: -2%;
+  margin-left: 15%;
+  background-color:lightgrey;
+
+  font-size: 100%;
+  font-family: "Times New Roman", Times, serif;
+
+  border: 1px solid black;
+}
+#submit-btn{
+  width: 10rem;
+  height: 10%;
+  margin-left: 40%;
+  color:white;
+  background-color:  #0c71e0;
+  font-family: Helvetica;
+  font-size: medium;
+
+  border-radius:5px;
 }
 
 .active {
