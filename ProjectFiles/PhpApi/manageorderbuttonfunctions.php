@@ -57,6 +57,7 @@ if ($button == "place-order"){
             <td>Quantity</td>
             <td>Price</td>
             <td>Discount</td>
+            <td>Transaction Time</td>
 
           </tr>
         </th>
@@ -73,6 +74,7 @@ if ($button == "place-order"){
             <td><?=$row['quantity'];?></td>
             <td><?="$".$row['price'];?></td>
             <td><?=$row['discount']."%";?></td>
+            <td><?=$row['transaction_time']?></td>
           </tr>
           <?php endforeach;?>
         </tbody>
