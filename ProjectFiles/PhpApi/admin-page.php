@@ -1,12 +1,12 @@
 <?php 
 include '../Databases/database.php';
 
-session_start();
+// session_start();
 
-if(isset($_SESSION['login'])){
-  header("Location: ../HTMLFiles/staff-login.php");
-  exit();
-}
+// if(isset($_SESSION['login'])){
+//   header("Location: ../HTMLFiles/staff-login.php");
+//   exit();
+// }
 
 //php goes here friends.
 
