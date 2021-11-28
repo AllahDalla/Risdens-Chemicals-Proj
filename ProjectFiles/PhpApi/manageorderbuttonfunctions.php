@@ -1,17 +1,14 @@
 <?php
 
+
 include "../Databases/database.php";
 
 $button = $_GET['button'];
 
 if ($button == "place-order"){
-  // Daniel, you will be working right here
-  // remove input for id
-<<<<<<< HEAD
-    ?>   
-=======
+  # Daniel, you will be working right here
+  # remove input for id
 ?>       
->>>>>>> 0616d080fb3155f3f8602af8b58d86c17effd0fa
 
         <form
           action="../PhpApi/admin-page.php?insert=submit-place-order"

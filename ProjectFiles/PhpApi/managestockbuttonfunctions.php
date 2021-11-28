@@ -8,11 +8,12 @@ $button = $_GET['button'];
 
 if ($button == "add"){
 ?>
+        
 
         <form id="add-stock-form"
           action="../PhpApi/admin-page.php?insert=submit-add"
           method="post">
-          <label >Supplier</label>
+          <label>Supplier</label>
           <input type="text" id="supplier" name="supplier" required/>
           <label for="product-name">Product Name</label>
           <input type="text" id="product-name" name="product-name" required/>
