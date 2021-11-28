@@ -189,6 +189,7 @@ label {
   margin-bottom: -1.1%;
   font-family: Roboto;
   font-size: 100%;
+  align-content: center;
 }
 
 #MONA_box {
@@ -404,7 +405,7 @@ form{
   text-align: center;
   align-content: center;
   background-color: #e2ebf0;
-  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px #078039;
 }
 
 /* //TESTING ANIMATION */
