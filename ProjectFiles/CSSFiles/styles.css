@@ -48,7 +48,7 @@ thead {
   border: 0.2em solid #d3d3d3;
 }
 
-#result-area {
+/*#result-area {
   text-align: center;
   font-family: Helvetica;
   font-size: medium;
@@ -58,7 +58,7 @@ thead {
   text-transform: none;
   color: #000000;
   background-color: #ffffff;
-}
+}*/
 
 .stock-btn {
   margin: 3em auto;
@@ -400,14 +400,6 @@ input[type="mona_submit"]:hover {
     box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
   }
 }
-/*css for forms*/
-form{
-  text-align: center;
-  align-content: center;
-  background-color: #e2ebf0;
-  text-shadow: 2px 2px #078039;
-}
-
 /* //TESTING ANIMATION */
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
