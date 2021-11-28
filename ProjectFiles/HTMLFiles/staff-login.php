@@ -10,7 +10,7 @@
   </head>
   <body class="Ramona-body">
     <div id="items-center">
-      <form action="#">
+      <form action="../Databases/database.php" method="post">
         <div id="MONA_STAFF_box">
           <label for="roles">Please select user type...</label>
           <select name="roles" id="roles">
@@ -19,15 +19,24 @@
           </select>
           <div class="u_name">
             <label for="username">Enter username</label>
-            <input type="mona_text" id="username" placeholder="NAME" />
+            <input type="mona_text" id="username" name="username" placeholder="NAME" />
           </div>
           <div class="u_pwd">
             <label for="pwd">Enter password</label>
-            <input type="mona_text" id="pwd" placeholder="PASSWORD" />
+            <input type="mona_text" id="pwd" name="pwd" placeholder="PASSWORD" />
           </div>
-          <input type="mona_submit" value="Submit" />
+          <button type="submit" id="m_submit" value="submit">Submit</button>
         </div>
       </form>
     </div>
   </body>
 </html>
+
+<?php
+if(isset($_GET['logout'])){
+  session_start();
+  session_destroy();
+}
+
+?>
+

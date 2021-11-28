@@ -12,9 +12,9 @@
     <div id="MONA_box">
       <p class="MONA_title">WHO ARE YOU?</p>
       <div id="MONA_btn-box">
-        <a href="customer.html"><button id="MONA_CUS_btn">CUSTOMER</button></a>
+        <a href="customer.php"><button id="MONA_CUS_btn">CUSTOMER</button></a>
         <div id="MONA_line"></div>
-        <a href="staff-login.html"
+        <a href="staff-login.php"
           ><button id="MONA_STAFF_btn">STAFF</button></a
         >
       </div>

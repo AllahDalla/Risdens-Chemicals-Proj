@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+if(isset($_SESSION['login'])){
+ 
+}else{
+  header("Location: ../HTMLFiles/staff-login.php");
+  exit();
+}
 // THIS IS WHERE ARE FUNCTIONALITIES FOR THE MANAGE STOCK PAGE WILL BE IMPLEMENTED
 // EXAMPLE: WHEN ADD STOCK IS CLICKED, A FUNCTIONALITY WILL BE CARRIED OUT
 

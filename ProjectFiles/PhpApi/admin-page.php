@@ -1,6 +1,16 @@
 <?php 
 include '../Databases/database.php';
 
+session_start();
+
+if(isset($_SESSION['login'])){
+  // echo $_SESSION['login'];
+}else{
+  // echo "Incorrect credentials";
+  header("Location: ../HTMLFiles/staff-login.php");
+  exit();
+}
+
 //php goes here friends.
 
 //THIS PHP DOCUMENT IS USED TO BRING UP THE SIDEBAR PAGES ONLY: EXAMPLE, WHEN MANAGE STOCK BUTTON
@@ -10,7 +20,8 @@ include '../Databases/database.php';
 
 
 
-
+if(isset($_GET['page'])){
+  
 $pageinfo = $_GET['page'];
 
 if($pageinfo == "managestock"){ //checks to see which page is being requested to be displayed. This is how the pages will be requested from the sidebar buttons
@@ -104,8 +115,10 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 <?php
 }else if($pageinfo == "financialreport"){
     echo "Page is suppose to show here too. When we get it right, it shall be added in God's grace";
+    
 }else if($pageinfo == "settings"){
     echo "This is the page to add new users, passwords, change anything in the database etc page.";
+}
 }
 
   if (isset($_GET['insert'], $_POST['supplier'],$_POST['product-name'], $_POST['quantity'], $_POST['price'] ) || isset($_POST['id'])){
@@ -134,7 +147,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $conn->exec($update_tracker_sql);
       echo "New record added";
 
-      header("Location: ../HTMLFiles/admin-homepage.html");
+      header("Location: ../HTMLFiles/admin-homepage.php");
       exit();
     }else if ($button == "submit-update"){
 
@@ -155,7 +168,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 
       $conn->exec($update_tracker_sql);
       echo "New record updated";
-      header("Location: ../HTMLFiles/admin-homepage.html");
+      header("Location: ../HTMLFiles/admin-homepage.php");
       exit();
 
     }
@@ -173,11 +186,12 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $quantity = $_POST['quantity'];
       $price = $_POST['price'];
       $discount = $_POST['discount'];
+      $delivery = $_POST['delivery'];
 
   
       $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-      $sql = "INSERT INTO `transactions`(title, customer_name, telephone, delivery_address, product_name, quantity, price , discount, transaction_time)  
-              VALUES ('$title','$customer_name', '$tele', '$addr', '$product_name', '$quantity', '$price', '$discount', now())";
+      $sql = "INSERT INTO `transactions`(title, customer_name, telephone, delivery_address, product_name, quantity, price , discount, delivery_date, transaction_time)  
+              VALUES ('$title','$customer_name', '$tele', '$addr', '$product_name', '$quantity', '$price', '$discount', '$delivery', now())";
       $conn->exec($sql);
       echo "New record updated";
 
@@ -196,11 +210,97 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
         echo "2";
       }
       
-      header("Location: ../HTMLFiles/admin-homepage.html");
+      header("Location: ../HTMLFiles/admin-homepage.php");
       exit();
 
 
     }
   }
+
+  if (isset($_GET['schedule'])){
+    $date = $_POST['date'];
+    setcookie("schedule","$date", time()+ 10);
+    header("Location: ../HTMLFiles/admin-homepage.php");
+    exit();
+    
+
+
+  }
+  if(isset($_GET['getschedule'])){
+    if(isset($_COOKIE['schedule'])){
+    $date = $_COOKIE['schedule'];
+  
+    $stmt = $conn->query("SELECT * FROM `transactions`
+                            WHERE delivery_date= '$date'");
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    ?>
+    <h1>RISDEN'S CHEMICALS SCHEDULE</h1>
+    <h2 id="h2"><?= scheduler($date);?></h2>
+    <div id="scrollable-table">
+      <table>
+        <th>
+          <tr>
+            <td>Title</td>
+            <td>Customer</td>
+            <td>Telephone #</td>
+            <td>Delivery Address</td>
+            <td>Product</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Delivery Date</td>
+            <td>Transaction Time</td>
+          </tr>
+        </th>
+        <tbody>
+          <?php foreach($results as $row):?>
+          <tr>
+            <td><?=$row['title'];?></td>
+            <td><?=$row['customer_name'];?></td>
+            <td><?=$row['telephone'];?></td>
+            <td><?=$row['delivery_address'];?></td>
+            <td><?=$row['product_name'];?></td>
+            <td><?=$row['quantity'];?></td>
+            <td><?="$".$row['price'];?></td>
+            <td><?=$row['delivery_date']?></td>
+            <td><?=$row['transaction_time']?></td>
+          </tr>
+          <?php endforeach;?>
+        </tbody>
+      </table>
+    </div>
+    <?php
+    }
+  }
+
+function scheduler($date){
+  $picker = explode("-", strval($date));
+
+  if((int)$picker[1] == 1){
+    return "January Day ".$picker[2];
+  }else if((int)$picker[1] == 2){
+    return "February Day ".$picker[2];
+  }else if((int)$picker[1] == 3){
+    return "March Day ".$picker[2];
+  }else if((int)$picker[1] == 4){
+    return "April Day ".$picker[2];
+  }else if((int)$picker[1] == 5){
+    return "May Day ".$picker[2];
+  }else if((int)$picker[1] == 6){
+    return "June Day ".$picker[2];
+  }else if((int)$picker[1] == 7){
+    return "July Day ".$picker[2];
+  }else if((int)$picker[1] == 8){
+    return "August Day ".$picker[2];
+  }else if((int)$picker[1] == 9){
+    return "September Day ".$picker[2];
+  }else if((int)$picker[1] == 10){
+    return "October Day ".$picker[2];
+  }else if((int)$picker[1] == 11){
+    return "November Day ".$picker[2];
+  }else if((int)$picker[1] == 12){
+    return "December Day ".$picker[2];
+  }
+}
 
 ?>

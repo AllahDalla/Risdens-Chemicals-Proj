@@ -2,7 +2,7 @@
 
 // Starting the real coding for pages here
 
-var redirect_page_count = 0;
+
 
 
 
@@ -55,6 +55,9 @@ function buttonFucntions(){
         sidebarGenFinRep.className = "pulsate"
         sidebarSettings.className = "pulsate"
         sidebarLogout.className = "pulsate"
+
+       
+
 
         var url = "../PhpApi/admin-page.php?page=manageorder"
 
@@ -295,6 +298,15 @@ function manageOrderButtonFunction(){
                 if(response.ok){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
+
+                    var submit = document.getElementById("submit-schedule-btn")
+
+                    submit.addEventListener("click", async function(event){
+                        sessionStorage.setItem("page", "2")
+                        sessionStorage.setItem("schedule", "yes")
+                      
+                    })
+
                     return;
 
                 }else{
@@ -313,15 +325,72 @@ window.onload = async function(){
     buttonFucntions()
     
     console.log(window.performance.navigation.type)
-    if (window.performance.navigation.type == 0){
+    if(sessionStorage.getItem("no-redirect") == "yes"){
+        if (window.performance.navigation.type == 0){
           
-        if (sessionStorage.getItem("page") == 1){
-            var page = document.getElementById("MS-btn").click()
-            sessionStorage.removeItem("page")
-        }else if(sessionStorage.getItem("page") == 2){
-            var page = document.getElementById("MO-btn").click()
-            sessionStorage.removeItem("page")
+            if (sessionStorage.getItem("page") == 1){
+                var page = document.getElementById("MS-btn").click()
+                sessionStorage.removeItem("page")
+            }else if(sessionStorage.getItem("page") == 2){
+                    if(sessionStorage.getItem("schedule") == "yes"){
+                        var page = document.getElementById("MO-btn").click()
+                        syncDelay(700)
+                        scheduler()
+                        sessionStorage.removeItem("page")
+                        sessionStorage.removeItem("schedule")
+                    }else{
+                        var page = document.getElementById("MO-btn").click()
+                        sessionStorage.removeItem("page")
+                    }
+                    
+                }
+                
         }
-   
     }
+    sessionStorage.setItem("no-redirect", "yes");
+   
+   
 }
+
+
+// THIS FUNCTION IS USED TO COMPLIMENT/ AID THE VIEW SCHEDULE FUNCTION.
+// THIS FUNCTIONS FECTHES DATA FROM ADMIN-PAGE.PHP AND RETRIEVES THE SCHEDULE TO BE DISPLAYED
+async function scheduler(){
+    var url = "../PhpApi/admin-page.php?getschedule=yes"
+                        
+    await fetch(url)
+        .then(async response => {
+            if(response.ok){
+                var input_field = await response.text()
+                // syncDelay(700)
+                var result = document.getElementById("result-area")
+                // console.log(result)
+                result.innerHTML = ""+input_field
+                return;
+            }else{
+                return Promise.reject("The response was not 200. Something went wrong")
+            }
+        })
+        .catch(error =>{
+            console.log("There was error with the connection: "+error)
+        })
+}
+
+//THIS FUNCTION DELAYS THE APPLICATION BY A FEW SECONDS TO GIVE THE DOCUMENT TIME TO LOAD TO
+// FIND OR DETECT OR GET AN ELEMENT
+
+function syncDelay(milliseconds){
+
+    var start = new Date().getTime()
+    // console.log("This is the start value : "+start)
+    var end = 0
+    while((end-start) < milliseconds){
+        // console.log("This is the milliseconds : "+milliseconds)
+        // console.log("This is end-start value"+(end-start))
+        end = new Date().getTime()
+    }
+
+}
+// console.log("Before Delay")
+// syncDelay(700)
+// console.log("After Delay")

@@ -48,8 +48,39 @@ thead {
   border: 0.2em solid #d3d3d3;
 }
 
+<<<<<<< HEAD
 #result-area {
+=======
+#h2 {
+  margin-left: 40%;
+}
+
+#result-area h1 {
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: none;
+  color: #000000;
   background-color: #ffffff;
+}
+#result-area {
+  text-align: left;
+  font-family: Helvetica;
+  font-size: medium;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  color: #000000;
+>>>>>>> 7b428c0fed3fd6a82023241a1f235d0958f098a0
+  background-color: #ffffff;
+}
+#result-area label {
+  /* margin-top:5%; */
+  margin-left: 17%;
 }
 
 .stock-btn {
@@ -92,9 +123,10 @@ input {
   
 }
 
-a[href=""]:hover {
-  cursor: pointer;
+a[href=""]:hover,
+.pulsate:hover {
   color: red;
+  /* border: 2px solid green; */
 }
 
 .header {
@@ -115,6 +147,11 @@ a[href=""]:hover {
   margin-left: 20px;
   font-size: 14px;
 }
+
+/* #welcome-name {
+  margin-left: 400px;
+  border: 2px solid red;
+} */
 
 .header i {
   margin-left: 20px;
@@ -179,8 +216,9 @@ a[href=""]:hover {
 }
 
 label {
+  display: inline;
   margin-left: 5%;
-  margin-bottom: -1.1%;
+  /* margin-bottom: -1.1%; */
   font-family: Roboto;
   font-size: 100%;
   align-content: center;
@@ -224,7 +262,7 @@ label {
   display: flex;
   width: 100%;
   flex-direction: column;
-  height: 21.875rem;
+  height: 24.875rem;
   background: #64c0bb;
   border: 0.25rem solid #000000;
   box-shadow: 1.1875rem 0.625rem 0.25rem rgba(0, 0, 0, 0.25);
@@ -232,7 +270,6 @@ label {
 
 input[type="mona_text"] {
   width: 90%;
-  padding: 0.75rem 1.25rem;
   margin-left: 5%;
 
   font-size: 100%;
@@ -267,17 +304,19 @@ input[type="mona_text"] {
   color: black;
 }
 
-input[type="mona_submit"] {
+#m_submit {
   margin-top: 2%;
   margin-left: 40%;
   width: 20%;
   height: 10%;
   text-align: center;
   border: 1px solid #000000;
+  font-size: 100%;
+  color: white;
   border-radius: 5px;
   background-color: #4b7ddf;
 }
-input[type="mona_submit"]:hover {
+#m_submit:hover {
   background-color: gray;
 }
 
@@ -361,6 +400,36 @@ input[type="mona_submit"]:hover {
   letter-spacing: 0.105em;
 
   color: #000000;
+}
+/* Ramona's CSS for Manage Stock */
+
+input[type="text"],
+input[type="email"] {
+  width: 40%;
+  padding: 5px 10px;
+  margin-top: 1%;
+  margin-bottom: 1.5%;
+  margin-left: 17%;
+
+  font-size: 100%;
+  font-family: "Times New Roman", Times, serif;
+
+  /* border: 1px solid black; */
+}
+input[type="date"] {
+  margin-top: 1%;
+  margin-left: 17%;
+}
+#submit-btn {
+  width: 10rem;
+  height: 10%;
+  margin-left: 40%;
+  color: white;
+  background-color: #0c71e0;
+  font-family: Helvetica;
+  font-size: medium;
+
+  border-radius: 5px;
 }
 
 .active {
