@@ -1,9 +1,9 @@
 <?php
 
 include "../ProjectFiles/Databases/database.php";
-    $role = "admin";
-    $username  = "AllahDalla";
-    $pwd = "password321";
+    $role = $_POST['roles'];
+    $username  = $_POST['username'];
+    $pwd = $_POST['pwd'];
 
 
     $hash = hash_init("sha1");
@@ -15,5 +15,28 @@ include "../ProjectFiles/Databases/database.php";
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo $results[0]['password'];
+    ?>
+    <br/>
+    <?php
+    echo "\n".$password;
+    ?>
+    <br/>
+    <?php
+    echo hash_equals($password, $results[0]['password']);
+    ?>
+    <br/>
+    <?php
+    echo hash_equals($password, $results[0]['password']);
+    if (hash_equals($password, $results[0]['password'])){
+        ?>
+        <br/>
+        <?php
+        echo "They are the same";
+    }else{
+        ?>
+        <br/>
+        <?php
+        echo "They are not the same";
+    }
 
 ?>

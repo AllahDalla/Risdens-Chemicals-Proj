@@ -1,12 +1,15 @@
 <?php 
 include '../Databases/database.php';
 
-// session_start();
+session_start();
 
-// if(isset($_SESSION['login'])){
-//   header("Location: ../HTMLFiles/staff-login.php");
-//   exit();
-// }
+if(isset($_SESSION['login'])){
+  // echo $_SESSION['login'];
+}else{
+  // echo "Incorrect credentials";
+  header("Location: ../HTMLFiles/staff-login.php");
+  exit();
+}
 
 //php goes here friends.
 
@@ -207,7 +210,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
         echo "2";
       }
       
-      header("Location: ../HTMLFiles/admin-homepage..php");
+      header("Location: ../HTMLFiles/admin-homepage.php");
       exit();
 
 

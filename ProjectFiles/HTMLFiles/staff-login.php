@@ -10,7 +10,7 @@
   </head>
   <body class="Ramona-body">
     <div id="items-center">
-      <form action="../PhpApi/Test.php" method="post">
+      <form action="../Databases/database.php" method="post">
         <div id="MONA_STAFF_box">
           <label for="roles">Please select user type...</label>
           <select name="roles" id="roles">
