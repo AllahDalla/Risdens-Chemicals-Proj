@@ -2,20 +2,8 @@
 
 // Starting the real coding for pages here
 
+var redirect_page_count = 0;
 
-// This right here runs the entire script. All functions made will be called inside this function
-window.onload = function(){
-    buttonFucntions()
-    // alert("Click a sidebar button and see what it does. Analyze code. This is the format we are using. Works well as you can see")
-    console.log(window.performance.navigation.type)
-    if (window.performance.navigation.type == 0){
-        var page = document.getElementById("MS-btn").click()
-        console.log(page)
-    }
-
-
-
-}
 
 
 function buttonFucntions(){
@@ -27,7 +15,7 @@ function buttonFucntions(){
     var sidebarLogout = document.getElementById("logout-btn")
 
     // gets buttons that are requested from php files after fetching ofcourse
-    var manageStockAddStockBtn = document.getElementById("add-stock-btn") //  gets the manage stock button that comes up on the manage stock page
+    //var manageStockAddStockBtn = document.getElementById("add-stock-btn") //  gets the manage stock button that comes up on the manage stock page
     
     var mainarea = document.getElementById("stock-result") // gets main area where each page is going to be displayed using AJAX
 
@@ -152,6 +140,7 @@ function buttonFucntions(){
 function managestockButtonFunction(){ 
     var addStock = document.getElementById("add-stock-btn")
     var updateStock = document.getElementById("update-stock-btn")
+    var viewLog = document.getElementById("view-log-btn")
     var result = document.getElementById("result-area")
 
 
@@ -171,6 +160,7 @@ function managestockButtonFunction(){
                     //COLLECTING DATA TO INSERT INTO DATABASE FROM USER ADD STOCK FIELD
                     var submit = document.getElementById("submit-btn")
                     submit.addEventListener('click', async function(event){
+                        sessionStorage.setItem("page", "1")
                         alert("Record has been added")                  
                     })
 
@@ -199,10 +189,33 @@ function managestockButtonFunction(){
                     result.innerHTML = ""+input_field
 
                     var submit = document.getElementById("submit-btn")
+                    
                     submit.addEventListener('click', async function(event){
+                        sessionStorage.setItem("page", "1")
                         alert("Record has been updated")                  
                     })
 
+                    return;
+
+                }else{
+                    return Promise.reject("The response was not 200. Something went wrong")
+                }
+            })
+            .catch(error =>{
+                console.log("There was error with the connection: "+error)
+            })
+    })
+
+    viewLog.addEventListener("click", async function(f){
+        f.preventDefault();
+
+        var url = "../PhpApi/managestockbuttonfunctions.php?button=view-log"
+
+        await fetch(url)
+            .then(async response =>{
+                if(response.ok){
+                    var input_field = await response.text()
+                    result.innerHTML = ""+input_field
                     return;
 
                 }else{
@@ -233,6 +246,13 @@ function manageOrderButtonFunction(){
                 if(response.ok){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
+
+                    var submit = document.getElementById("submit-btn")
+                    submit.addEventListener('click', async function(event){
+                        sessionStorage.setItem("page","2");
+                        alert("Order has been placed")                  
+                    })
+
                     return;
 
                 }else{
@@ -288,23 +308,20 @@ function manageOrderButtonFunction(){
 }
 
 
-// THIS FUNCTION IS BUILT TO REOPEN A PAGE WITH THE CURRENT STATS UPON REDIRETION
-// FROM PHP PAGE SO THAT THE USER DOES NOT NEED TO CLICK BACK THE SIDEBAR BUTTONS TO REFRESH PAGE
-// THIS IS A TEST FUNCTION, IT MAY OR MAY NOT BE USED
-
-function refresh(a){
-    if (a === undefined){
-        var clicked = 0
-    }else{
-        var clicked = a
-    }
-
-    if (clicked == 1){
-        window.onload = function(){
-            var page = document.getElementById("MS-btn")
-            page.click()
+// This right here runs the entire script. All functions made will be called inside this function
+window.onload = async function(){
+    buttonFucntions()
+    
+    console.log(window.performance.navigation.type)
+    if (window.performance.navigation.type == 0){
+          
+        if (sessionStorage.getItem("page") == 1){
+            var page = document.getElementById("MS-btn").click()
+            sessionStorage.removeItem("page")
+        }else if(sessionStorage.getItem("page") == 2){
+            var page = document.getElementById("MO-btn").click()
+            sessionStorage.removeItem("page")
         }
-        
+   
     }
 }
-
