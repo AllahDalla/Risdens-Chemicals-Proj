@@ -36,6 +36,8 @@ try {
         if(hash_equals($password, $dbpwd)){
             session_start();
             $_SESSION['login'] = "logged in";
+            $_SESSION['username']= $username;
+            $_SESSION['role'] = strtoupper($role);
             echo "I have matched perfectly";
             header("Location:../HTMLFiles/admin-homepage.php");
             exit();
@@ -43,20 +45,21 @@ try {
         }else{
             header("Location:../HTMLFiles/staff-login.php");
             exit();
-        }
-    
+        }    
     }
+
+    
 
    
     // echo "This connected!";
 
 
     // Testing database retrieval and updating
-
+    // AL-ROMARIO DAVIS' DATABASE RECORD
     // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     // $roles = "admin";
-    // $username= "AllahDalla";
-    // $pwd = "password321";
+    // $username= "";
+    // $pwd = "";
     // $hash = hash_init("sha1");
     // hash_update($hash, $pwd);
     // $password = hash_final($hash);
@@ -64,6 +67,69 @@ try {
     //         VALUES ('$roles','$username','$password')";
     // $conn->exec($sql);
     // echo "New record added";
+
+
+
+    // RAMONA STANBERRY'S DATABASE RECORD
+    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    // $roles = "admin";
+    // $username= "<your name here>";
+    // $pwd = "<password>";
+    // $hash = hash_init("sha1");
+    // hash_update($hash, $pwd);
+    // $password = hash_final($hash);
+    // $sql = "INSERT INTO `users` (role, username, password) 
+    //         VALUES ('$roles','$username','$password')";
+    // $conn->exec($sql);
+    // echo "New record added";
+
+
+    // DAVASKYE DEBIQUE'S DATABASE RECORD
+    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    // $roles = "admin";
+    // $username= "<your name here>";
+    // $pwd = "<password>";
+    // $hash = hash_init("sha1");
+    // hash_update($hash, $pwd);
+    // $password = hash_final($hash);
+    // $sql = "INSERT INTO `users` (role, username, password) 
+    //         VALUES ('$roles','$username','$password')";
+    // $conn->exec($sql);
+    // echo "New record added";
+
+
+
+    // DANIEL RICHARDSON'S DATABASE RECORD
+    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    // $roles = "admin";
+    // $username= "<your name here>";
+    // $pwd = "<password>";
+    // $hash = hash_init("sha1");
+    // hash_update($hash, $pwd);
+    // $password = hash_final($hash);
+    // $sql = "INSERT INTO `users` (role, username, password) 
+    //         VALUES ('$roles','$username','$password')";
+    // $conn->exec($sql);
+    // echo "New record added";
+
+
+    // SHEREKA SIMMONDS' DATABASE RECORD
+    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    // $roles = "admin";
+    // $username= "<your name here>";
+    // $pwd = "<password>";
+    // $hash = hash_init("sha1");
+    // hash_update($hash, $pwd);
+    // $password = hash_final($hash);
+    // $sql = "INSERT INTO `users` (role, username, password) 
+    //         VALUES ('$roles','$username','$password')";
+    // $conn->exec($sql);
+    // echo "New record added";
+
+
+
+
+
     
 } catch (PDOException $e) {
     die($e->getMessage());

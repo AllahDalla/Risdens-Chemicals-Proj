@@ -8,9 +8,6 @@ if(isset($_SESSION['login'])){
   exit();
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,7 +27,7 @@ if(isset($_SESSION['login'])){
   <body>
     <div class="header">
       <i class="fa fa-bug"></i>
-      <h1>Risden's Chemicals Admin Page</h1>
+      <h1>Risden's Chemicals : <?=$_SESSION['role'];?> PAGE</h1>
     </div>
 
     <!--SideBar-->
@@ -57,7 +54,7 @@ if(isset($_SESSION['login'])){
 
       <div>
         <i class="fa fa-sign-out"></i>
-        <a href="" class="pulsate" id="logout-btn">Logout</a>
+        <a href="../HTMLFiles/staff-login.php?logout=yes" class="pulsate" id="logout-btn">Logout</a>
       </div>
     </div>
     <!-- This is where all data refreshes, main space, main function will occur -->
