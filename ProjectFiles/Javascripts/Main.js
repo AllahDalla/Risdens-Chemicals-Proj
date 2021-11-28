@@ -346,13 +346,13 @@ window.onload = async function(){
 
 
 async function scheduler(){
-    var url = "../PhpApi/admin-page.php?schedule=yes"
+    var url = "../PhpApi/admin-page.php?getschedule=yes"
                         
     await fetch(url)
         .then(async response => {
             if(response.ok){
                 var input_field = await response.text()
-                var result = document.getElementById("result-area")
+                var result = document.getElementById("stock-result")
 
                 result.innerHTML = ""+input_field
                 return;

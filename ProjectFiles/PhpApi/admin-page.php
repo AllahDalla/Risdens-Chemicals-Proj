@@ -205,12 +205,17 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
   }
 
   if (isset($_GET['schedule'])){
-    // echo $_GET['schedule'];
-    // echo $_POST['date'];
-
     $date = $_POST['date'];
+    session_start();
+    $_SESSION['date'] = $date;
+    header("Location: ../HTMLFiles/admin-homepage.html");
+    exit();
+    
 
 
+  }
+  if(isset($_GET['getschedule'])){
+    $date = $_SESSION['date'];
     $stmt = $conn->query("SELECT * FROM `transactions`
                             WHERE delivery_date= $date");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -260,7 +265,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       </table>
     </div>
     <?php
-    header("Location: ../HTMLFiles/admin-homepage.html");
-    exit();
+    
   }
+
 ?>
