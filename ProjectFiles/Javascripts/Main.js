@@ -325,30 +325,36 @@ window.onload = async function(){
     buttonFucntions()
     
     console.log(window.performance.navigation.type)
-    if (window.performance.navigation.type == 0){
+    if(sessionStorage.getItem("no-redirect") == "yes"){
+        if (window.performance.navigation.type == 0){
           
-        if (sessionStorage.getItem("page") == 1){
-            var page = document.getElementById("MS-btn").click()
-            sessionStorage.removeItem("page")
-        }else if(sessionStorage.getItem("page") == 2){
-                if(sessionStorage.getItem("schedule") == "yes"){
-                    var page = document.getElementById("MO-btn").click()
-                    syncDelay(700)
-                    // var button = document.getElementById("view-schedule-btn").click()
-                    scheduler()
-                }else{
-                    var page = document.getElementById("MO-btn").click()
-                    sessionStorage.removeItem("page")
+            if (sessionStorage.getItem("page") == 1){
+                var page = document.getElementById("MS-btn").click()
+                sessionStorage.removeItem("page")
+            }else if(sessionStorage.getItem("page") == 2){
+                    if(sessionStorage.getItem("schedule") == "yes"){
+                        var page = document.getElementById("MO-btn").click()
+                        syncDelay(700)
+                        scheduler()
+                        sessionStorage.removeItem("page")
+                        sessionStorage.removeItem("schedule")
+                    }else{
+                        var page = document.getElementById("MO-btn").click()
+                        sessionStorage.removeItem("page")
+                    }
+                    
                 }
                 
-            }
-            
+        }
     }
+    sessionStorage.setItem("no-redirect", "yes");
+   
    
 }
 
 
-
+// THIS FUNCTION IS USED TO COMPLIMENT/ AID THE VIEW SCHEDULE FUNCTION.
+// THIS FUNCTIONS FECTHES DATA FROM ADMIN-PAGE.PHP AND RETRIEVES THE SCHEDULE TO BE DISPLAYED
 async function scheduler(){
     var url = "../PhpApi/admin-page.php?getschedule=yes"
                         
@@ -369,6 +375,9 @@ async function scheduler(){
             console.log("There was error with the connection: "+error)
         })
 }
+
+//THIS FUNCTION DELAYS THE APPLICATION BY A FEW SECONDS TO GIVE THE DOCUMENT TIME TO LOAD TO
+// FIND OR DETECT OR GET AN ELEMENT
 
 function syncDelay(milliseconds){
 

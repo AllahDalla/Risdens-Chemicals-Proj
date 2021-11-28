@@ -1,6 +1,13 @@
 <?php 
 include '../Databases/database.php';
 
+session_start();
+
+if(isset($_SESSION['login'])){
+  header("Location: ../HTMLFiles/staff-login.php");
+  exit();
+}
+
 //php goes here friends.
 
 //THIS PHP DOCUMENT IS USED TO BRING UP THE SIDEBAR PAGES ONLY: EXAMPLE, WHEN MANAGE STOCK BUTTON
@@ -137,7 +144,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $conn->exec($update_tracker_sql);
       echo "New record added";
 
-      header("Location: ../HTMLFiles/admin-homepage.html");
+      header("Location: ../HTMLFiles/admin-homepage.php");
       exit();
     }else if ($button == "submit-update"){
 
@@ -158,7 +165,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 
       $conn->exec($update_tracker_sql);
       echo "New record updated";
-      header("Location: ../HTMLFiles/admin-homepage.html");
+      header("Location: ../HTMLFiles/admin-homepage.php");
       exit();
 
     }
@@ -200,7 +207,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
         echo "2";
       }
       
-      header("Location: ../HTMLFiles/admin-homepage.html");
+      header("Location: ../HTMLFiles/admin-homepage..php");
       exit();
 
 
@@ -210,13 +217,14 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
   if (isset($_GET['schedule'])){
     $date = $_POST['date'];
     setcookie("schedule","$date", time()+ 10);
-    header("Location: ../HTMLFiles/admin-homepage.html");
+    header("Location: ../HTMLFiles/admin-homepage.php");
     exit();
     
 
 
   }
   if(isset($_GET['getschedule'])){
+    if(isset($_COOKIE['schedule'])){
     $date = $_COOKIE['schedule'];
   
     $stmt = $conn->query("SELECT * FROM `transactions`
@@ -259,7 +267,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       </table>
     </div>
     <?php
-    
+    }
   }
 
 function scheduler($date){

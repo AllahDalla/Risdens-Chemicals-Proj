@@ -11,7 +11,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL auto_increment,
   `role` varchar(64) NOT NULL default '',
   `username` varchar(64) NOT NULL unique,
-  `password` varchar(64) NOT NULL default '',
+  `password` varchar(128) NOT NULL default '',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
 

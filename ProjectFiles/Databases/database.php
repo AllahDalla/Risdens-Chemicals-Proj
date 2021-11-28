@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+if(isset($_SESSION['login'])){
+  header("Location: ../HTMLFiles/staff-login.php");
+  exit();
+}
+
 $host = 'localhost';
 $username = 'risden_admin';
 $password = 'R1SD3N2211';
@@ -19,11 +26,16 @@ try {
     // Testing database retrieval and updating
 
     // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    // for($primary_key=10; $primary_key<=100; $primary_key++){
-    // $sql = "INSERT INTO `products` VALUES ('$primary_key','Supplier Name','Bleach','50', '20000')";
+    // $roles = "admin";
+    // $username= "AllahDalla";
+    // $pwd = "password321";
+    // $hash = hash_init("sha1");
+    // hash_update($hash, $pwd);
+    // $password = hash_final($hash);
+    // $sql = "INSERT INTO `users` (role, username, password) 
+    //         VALUES ('$roles','$username','$password')";
     // $conn->exec($sql);
     // echo "New record added";
-    // }
     
 } catch (PDOException $e) {
     die($e->getMessage());
