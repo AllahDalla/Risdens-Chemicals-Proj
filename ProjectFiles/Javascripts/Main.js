@@ -2,7 +2,7 @@
 
 // Starting the real coding for pages here
 
-var redirect_page_count = 0;
+
 
 
 
