@@ -43,13 +43,31 @@ try {
             exit();
         
         }else{
-            header("Location:../HTMLFiles/staff-login.php");
+            header("Location:../HTMLFiles/staff-login.php?cred=incorrect");
             exit();
         }    
     }
 
     
+    // CUSTOMER SENDING ORDERS TO BE UPDATED BY DATABASE
+    if(isset($_GET['customer-order'], $_POST['cname'], $_POST['caddress'], $_POST['cnumber'], $_POST['ddate'], $_POST['cp_name'], $_POST['cquantity'], $_POST['ctitle'])){
+        
+        $title = $_POST['ctitle'];
+        $customer_name = $_POST['cname'];
+        $addr = $_POST['caddress'];
+        $tel = $_POST['cnumber'];
+        $product_name = $_POST['cp_name'];
+        $delivery_date = $_POST['ddate'];
+        $quantity = $_POST['cquantity'];
 
+
+
+        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $sql = "INSERT INTO `incoming_orders`(title, customer_name, telephone, delivery_address, product_name, quantity, delivery_date, transaction_time)
+              VALUES ('$title','$customer_name','$tel', '$addr', '$product_name', '$quantity', '$delivery_date', now())";
+      
+        $conn->exec($sql);
+    }
    
     // echo "This connected!";
 
@@ -58,8 +76,8 @@ try {
     // AL-ROMARIO DAVIS' DATABASE RECORD
     // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     // $roles = "admin";
-    // $username= "";
-    // $pwd = "";
+    // $username= "AllahDalla";
+    // $pwd = "password321";
     // $hash = hash_init("sha1");
     // hash_update($hash, $pwd);
     // $password = hash_final($hash);

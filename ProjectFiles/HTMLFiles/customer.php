@@ -24,15 +24,21 @@
             </tr>
       </table>
       <div id="cus_info">
-      <form customer="/customer_page.php">
+      <form action="../Databases/database.php?customer-order=cus-order-incoming" method="post">
+          <label for="ctitle">Title:</label><br>
+          <input type="text" id="ctitle" name="ctitle" required><br> 
           <label for="cname">Name:</label><br>
-          <input type="text" id="cname" name="cname"><br> 
-          <label for="cnumber">Number:</label><br>
-          <input type="text" id="cnumber" number="cnumber"><br> 
-          <label for="caddress">Address:</label><br>
-          <input type="text" id="caddress" address="caddress"><br> 
+          <input type="text" id="cname" name="cname" required><br> 
+          <label for="cp_name">Product Name:</label><br>
+          <input type="text" id="cp_name" name="cp_name" required><br> 
+          <label for="cquantity">Quantity:</label><br>
+          <input type="text" id="cquantity" name="cquantity" required><br> 
+          <label for="cnumber">Telephone Number:</label><br>
+          <input type="text" id="cnumber" name="cnumber" required><br> 
+          <label for="caddress">Delivery Address:</label><br>
+          <input type="text" id="caddress" name="caddress" required><br> 
           <label for="ddate">Delivery Date:</label><br>
-          <input type="date" id="ddate" date="ddate"><br> 
+          <input type="date" id="ddate" name="ddate" required><br> 
           <input type="submit" value="Submit"><br> 
       </form>
       </div>

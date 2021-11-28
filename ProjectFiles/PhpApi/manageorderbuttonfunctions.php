@@ -16,7 +16,49 @@ $button = $_GET['button'];
 if ($button == "place-order"){
   // Daniel, you will be working right here
   // remove input for id
+
+  include "../Databases/database.php";
+  $sql = "SELECT * FROM `incoming_orders`";
+
+  $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+  $stmt = $conn->query($sql);
+
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>       
+
+      <h1>Incoming Orders</h1>
+      <div id="scrollable-table">
+        <table>
+          <th>
+            <tr>
+              <td>ID</td>
+              <td>Title</td>
+              <td>Customer Name</td>
+              <td>Telephone</td>
+              <td>Product Name</td>
+              <td>Quantity</td>
+              <td>Delivery Date</td>
+              <td>Transaction Time</td>
+            </tr>
+          </th>
+          <tbody>
+            <?php foreach($results as $row):?>
+            <tr>
+              <td><?=$row['id'];?></td>
+              <td><?=$row['title'];?></td>
+              <td><?=$row['customer_name'];?></td>
+              <td><?=$row['telephone'];?></td>
+              <td><?=$row['product_name'];?></td>
+              <td><?=$row['quantity'];?></td>
+              <td><?=$row['delivery_date'];?></td>
+              <td><?=$row['transaction_time'];?></td>
+            </tr>
+            <?php endforeach;?>
+          </tbody>
+        </table>
+      </div>
+
 
         <form
           action="../PhpApi/admin-page.php?insert=submit-place-order"

@@ -16,6 +16,8 @@
           <select name="roles" id="roles">
             <option value="cashier">CASHIER</option>
             <option value="admin">ADMIN</option>
+            <option value="manager">MANAGER</option>
+            <option value="marketing">MARKETING</option>
           </select>
           <div class="u_name">
             <label for="username">Enter username</label>

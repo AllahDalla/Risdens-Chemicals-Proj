@@ -68,3 +68,22 @@ CREATE TABLE `logs` (
   `log_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+
+--
+-- Table structure for table `incoming_orders`
+--
+
+DROP TABLE IF EXISTS `incoming_orders`;
+CREATE TABLE `incoming_orders` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(64) NOT NULL,
+  `customer_name` varchar(64) NOT NULL,
+  `telephone` char(50) NOT NULL,
+  `delivery_address` varchar(128) NOT NULL,
+  `product_name` varchar(64) NOT NULL,
+  `quantity` int(40) NOT NULL,
+  `delivery_date` date NOT NULL,
+  `transaction_time` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
