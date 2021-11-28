@@ -52,6 +52,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       <div class="stock-btn">
         <button id="add-stock-btn" class="btn-1">ADD STOCK</button>
         <button id="update-stock-btn" class="btn-1">UPDATE STOCK</button>
+        <button id="view-log-btn" class="btn-1">VIEW LOGS</button>
       </div>
       <!-- This is where the things will come up when each button is clicked -->
       <div id="result-area"></div>
@@ -127,7 +128,12 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
       $sql = "INSERT INTO `products`(supplier, product_name, quantity, price)
               VALUES ('$supplier','$product_name','$quantity', '$price')";
+      
+      $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation)
+      VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Added')";
+      
       $conn->exec($sql);
+      $conn->exec($update_tracker_sql);
       echo "New record added";
       header("Location: ../HTMLFiles/admin-homepage.html");
       exit();
@@ -138,10 +144,17 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $product_name = $_POST['product-name'];
       $quantity = $_POST['quantity'];
       $price = $_POST['price'];
+
       $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
       $sql = "UPDATE `products`SET supplier='$supplier', product_name='$product_name', quantity='$quantity', price='$price'
               WHERE id=$id";
+      
+      $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation)
+      VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Updated')";
+      
       $conn->exec($sql);
+
+      $conn->exec($update_tracker_sql);
       echo "New record updated";
       header("Location: ../HTMLFiles/admin-homepage.html");
       exit();

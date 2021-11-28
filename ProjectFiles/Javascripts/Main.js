@@ -15,7 +15,7 @@ function buttonFucntions(){
     var sidebarLogout = document.getElementById("logout-btn")
 
     // gets buttons that are requested from php files after fetching ofcourse
-    var manageStockAddStockBtn = document.getElementById("add-stock-btn") //  gets the manage stock button that comes up on the manage stock page
+    //var manageStockAddStockBtn = document.getElementById("add-stock-btn") //  gets the manage stock button that comes up on the manage stock page
     
     var mainarea = document.getElementById("stock-result") // gets main area where each page is going to be displayed using AJAX
 
@@ -140,6 +140,7 @@ function buttonFucntions(){
 function managestockButtonFunction(){ 
     var addStock = document.getElementById("add-stock-btn")
     var updateStock = document.getElementById("update-stock-btn")
+    var viewLog = document.getElementById("view-log-btn")
     var result = document.getElementById("result-area")
 
 
@@ -188,11 +189,33 @@ function managestockButtonFunction(){
                     result.innerHTML = ""+input_field
 
                     var submit = document.getElementById("submit-btn")
+                    
                     submit.addEventListener('click', async function(event){
                         sessionStorage.setItem("page", "1")
                         alert("Record has been updated")                  
                     })
 
+                    return;
+
+                }else{
+                    return Promise.reject("The response was not 200. Something went wrong")
+                }
+            })
+            .catch(error =>{
+                console.log("There was error with the connection: "+error)
+            })
+    })
+
+    viewLog.addEventListener("click", async function(f){
+        f.preventDefault();
+
+        var url = "../PhpApi/managestockbuttonfunctions.php?button=view-log"
+
+        await fetch(url)
+            .then(async response =>{
+                if(response.ok){
+                    var input_field = await response.text()
+                    result.innerHTML = ""+input_field
                     return;
 
                 }else{
