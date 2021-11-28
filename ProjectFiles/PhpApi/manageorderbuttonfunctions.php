@@ -105,13 +105,11 @@ if ($button == "place-order"){
 }
 else if($button == "view-schedule"){
   ?>
-  <form action="./EmailSchedule.php?schedule=yes" method="post">
+  <form action="../PhpApi/admin-page.php?schedule=yes" method="post">
     <label for="date">Schedule Picker</label>
     <input type="date" name="date" id="date" required>
     <input type="submit" value="submit" id="submit-schedule-btn" required>
   </form>
-
-  <div id="schedule-area"></div>
 
 
 

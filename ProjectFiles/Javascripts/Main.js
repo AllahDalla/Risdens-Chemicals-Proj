@@ -301,23 +301,7 @@ function manageOrderButtonFunction(){
                     submit.addEventListener("click", async function(event){
                         sessionStorage.setItem("page", "2")
                         sessionStorage.setItem("schedule", "yes")
-                        var url = "../PhpApi/EmailSchedule.php"
-                        
-                        await fetch(url)
-                            .then(response => {
-                                if(response.ok){
-                                    var input_field = await response.text()
-                                    var result = document.getElementById("schedule-area")
-
-                                    result.innerHTML = ""+input_field
-                                    return;
-                                }else{
-                                    return Promise.reject("The response was not 200. Something went wrong")
-                                }
-                            })
-                            .catch(error =>{
-                                console.log("There was error with the connection: "+error)
-                            })
+                      
                     })
 
                     return;
@@ -344,17 +328,39 @@ window.onload = async function(){
             var page = document.getElementById("MS-btn").click()
             sessionStorage.removeItem("page")
         }else if(sessionStorage.getItem("page") == 2){
-            if(sessionStorage.getItem("schedule") == "yes"){
-                var page = document.getElementById("MO-btn").click()
-                var button = document.getElementById("view-schedule-btn")
-                sessionStorage.removeItem("page")
-                sessionStorage.removeItem("schedule")
-            }else{
-                var page = document.getElementById("MO-btn").click()
-                sessionStorage.removeItem("page")
+                if(sessionStorage.getItem("schedule") == "yes"){
+                   var page = document.getElementById("MO-btn").click()
+                   scheduler()
+
+                }else{
+                    var page = document.getElementById("MO-btn").click()
+                    sessionStorage.removeItem("page")
+                }
+                
             }
             
-        }
-   
     }
+   
+}
+
+
+
+async function scheduler(){
+    var url = "../PhpApi/admin-page.php?schedule=yes"
+                        
+    await fetch(url)
+        .then(async response => {
+            if(response.ok){
+                var input_field = await response.text()
+                var result = document.getElementById("result-area")
+
+                result.innerHTML = ""+input_field
+                return;
+            }else{
+                return Promise.reject("The response was not 200. Something went wrong")
+            }
+        })
+        .catch(error =>{
+            console.log("There was error with the connection: "+error)
+        })
 }
