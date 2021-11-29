@@ -5,7 +5,11 @@ window.onload = function(){
     redirectboycott()
     if(window.performance.navigation.type == 0){
         var query = getParameterByName("cred");
-        sessionStorage.setItem("query", query)
+        // sessionStorage.setItem("query", query)
+        if(query == "incorrect")
+        {
+            alert("You have entered incorrect role, password or username");
+        }
     }
 }
 
