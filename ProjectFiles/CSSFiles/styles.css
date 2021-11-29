@@ -425,6 +425,61 @@ input[type="date"] {
   border-radius: 5px;
 }
 
+/* Settings CSS */
+h2{
+  text-align: left;
+}
+#new-user-form{
+  border: 1px solid black;
+  position:relative;
+  background-color:rgb(176, 177, 194);
+  height: 17rem;
+  width: 40rem;
+  text-align: left;
+}
+#client-info-form{
+  border: 1px solid black;
+  position:relative;
+  background-color:rgb(176, 177, 194);
+  height: 13rem;
+  width: 40rem;
+  text-align: left;
+}
+#tax-form{
+  border: 1px solid black;
+  position:relative;
+  background-color:rgb(176, 177, 194);
+  height: 9rem;
+  width: 40rem;
+  text-align: left;
+}
+input[type="settings-text"]{
+  width: 30rem;
+  padding: 5px 10px;
+  /* margin-top: 1%; */
+  margin-bottom: 3%;
+  margin-left: 5%;
+
+  font-size:100%;
+  font-family: "Times New Roman", Times, serif;
+}
+#input-fields{
+  margin-top: 5%;
+  width: 65%;
+}
+#user-submit-btn{
+  width: 7rem;
+  height: 10%;
+  margin-left: 80%;
+  color:white;
+  background-color:  #0c71e0;
+  font-family: Helvetica;
+  font-size: medium;
+
+  border-radius:5px;
+}
+
+
 .active {
   animation: textColorChange 2s infinite;
 }

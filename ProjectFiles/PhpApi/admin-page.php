@@ -117,9 +117,62 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
     echo "Page is suppose to show here too. When we get it right, it shall be added in God's grace";
     
 }else if($pageinfo == "settings"){
-    echo "This is the page to add new users, passwords, change anything in the database etc page.";
+  // echo "This is the page to add new users, passwords, change anything in the database etc page.";
+  ?>
+
+<div id="main-info">
+  <h1> Risden's Chemicals Settings</h1>
+  <br>
+  <h2>Create New User</h2>
+  <div id="new-user-form">
+    <form action="../ProjectFiles/Javascripts/Main.js" method="post">
+      <div id="input-fields">
+        <label for="role">Role</label>
+        <input type="settings-text" id="product-name" name="role" />
+        <label for="user_name">Username</label>
+        <input type="settings-text" id="quantity" name="user_name" />
+        <label for="password">Password</label>
+        <input type="settings-text" id="price" name="password" />
+      </div>  
+        <input type="submit" id="user-submit-btn" value="Submit" />
+    </form>
+  </div>
+  <br>
+  <br>
+  <h2>Client Info</h2>
+  <div id="client-info-form">
+    <form action="../ProjectFiles/Javascripts/Main.js" method="post">
+      <div id="input-fields">
+        <label for="client_email">Email</label>
+        <input type="settings-text" id="c_email" name="client_email" />
+        <label for="client_password">Password</label>
+        <input type="settings-text" id="c_pwd" name="client_password" />
+      </div>
+        <input type="submit" id="user-submit-btn" value="Submit" />
+    </form>
+  </div>
+  <br>
+  <br>
+  <h2>Tax Info</h2>
+  <div id="tax-form">
+    <form action="../ProjectFiles/Javascripts/Main.js" method="post">
+      <div id="input-fields">
+        <label for="tax">G.C.T</label>
+        <input type="settings-text" id="tax" name="tax" />
+      </div>
+        <input type="submit" id="user-submit-btn" value="Submit" />
+    </form>
+  </div>
+  <br>
+  <br>
+
+
+
+<?php
+
 }
 }
+
 
   if (isset($_GET['insert'], $_POST['supplier'],$_POST['product-name'], $_POST['quantity'], $_POST['price'] ) || isset($_POST['id'])){
     
