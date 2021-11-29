@@ -153,12 +153,12 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
   </div>
   <br>
   <br>
-  <h2>Discount Info</h2>
-  <div id="disc-form">
+  <h2>Tax Info</h2>
+  <div id="tax-form">
     <form action="../ProjectFiles/Javascripts/Main.js" method="post">
       <div id="input-fields">
-        <label for="client_disc">Discount</label>
-        <input type="settings-text" id="disc" name="client_disc" />
+        <label for="tax">G.C.T</label>
+        <input type="settings-text" id="tax" name="tax" />
       </div>
         <input type="submit" id="user-submit-btn" value="Submit" />
     </form>
