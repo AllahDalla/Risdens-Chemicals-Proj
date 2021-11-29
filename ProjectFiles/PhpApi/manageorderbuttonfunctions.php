@@ -100,7 +100,7 @@ if ($button == "place-order"){
       <table>
         <th>
           <tr>
-            <td>ID</td>
+            <td>Product ID</td>
             <td>Order #</td>
             <td>Title</td>
             <td>Customer</td>
@@ -140,7 +140,7 @@ if ($button == "place-order"){
       </table>
     </div>
   <form
-    action="../PhpApi/admin-page.php?insert=submit-generate-receipt"
+    action="../PhpApi/Email.php?email=send-mail"
     method="post">
     <label for="id">ID</label>
     <input type="text" id="id" name="id" required/>

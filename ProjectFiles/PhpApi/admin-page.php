@@ -40,7 +40,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
         <table>
           <th>
             <tr>
-              <td>ID</td>
+              <td>Product ID</td>
               <td>Supplier</td>
               <td>Product Name</td>
               <td>Quantity</td>
@@ -83,7 +83,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
         <table>
           <th>
             <tr>
-              <td>ID</td>
+              <td>Product ID</td>
               <td>Supplier</td>
               <td>Product Name</td>
               <td>Quantity</td>
@@ -125,7 +125,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
   <br>
   <h2>Create New User</h2>
   <div id="new-user-form">
-    <form action="../ProjectFiles/Javascripts/Main.js" method="post">
+    <form action="../Databases/database.php?user=new-user" method="post">
       <div id="input-fields">
         <label for="role">Role</label>
         <input type="settings-text" id="product-name" name="role" />
@@ -141,7 +141,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
   <br>
   <h2>Client Info</h2>
   <div id="client-info-form">
-    <form action="../ProjectFiles/Javascripts/Main.js" method="post">
+    <form action="../Databases/database.php?email=client-email" method="post">
       <div id="input-fields">
         <label for="client_email">Email</label>
         <input type="settings-text" id="c_email" name="client_email" />
@@ -155,7 +155,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
   <br>
   <h2>Tax Info</h2>
   <div id="tax-form">
-    <form action="../ProjectFiles/Javascripts/Main.js" method="post">
+    <form action="../Databases/database.php?tax=GCT" method="post">
       <div id="input-fields">
         <label for="tax">G.C.T</label>
         <input type="settings-text" id="tax" name="tax" />
