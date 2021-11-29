@@ -69,85 +69,52 @@ try {
         $conn->exec($sql);
     }
    
-    // echo "This connected!";
+    if(isset($_GET['user'], $_POST['role'], $_POST['user_name'], $_POST['password'])){
+        if($_GET['user'] == "new-user"){
+
+            $role = $_POST['role'];
+            $username  = $_POST['user_name'];
+            $pwd = $_POST['password'];
+
+            $hash = hash_init("sha1");
+            hash_update($hash, $pwd);
+            $password = hash_final($hash);
+            
+            
 
 
-    // Testing database retrieval and updating
-    // AL-ROMARIO DAVIS' DATABASE RECORD
-    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    // $roles = "admin";
-    // $username= "AllahDalla";
-    // $pwd = "password321";
-    // $hash = hash_init("sha1");
-    // hash_update($hash, $pwd);
-    // $password = hash_final($hash);
-    // $sql = "INSERT INTO `users` (role, username, password) 
-    //         VALUES ('$roles','$username','$password')";
-    // $conn->exec($sql);
-    // echo "New record added";
+            $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $sql = "INSERT INTO `users`(role, username, password)
+                    VALUES ('$role','$username','$password')";
+      
+            $conn->exec($sql);
+            header("Location:../HTMLFiles/admin-homepage.php");
+            exit();
+        }
+    }
 
+    if(isset($_GET['email'], $_POST['client_email'], $_POST['client_password'])){
+        if($_GET['email'] == "client-email"){
+            session_start();
+            $_SESSION['email'] = $_POST['client_email'];
+            $_SESSION['password'] = $_POST['client_password'];
+            // echo $_SESSION['email'];
+            // echo $_SESSION['password'];
+            header("Location:../HTMLFiles/admin-homepage.php");
+            exit();
+            
+        }
+    }
 
-
-    // RAMONA STANBERRY'S DATABASE RECORD
-    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    // $roles = "admin";
-    // $username= "RamonaStanberry";
-    // $pwd = "monac";
-    // $hash = hash_init("sha1");
-    // hash_update($hash, $pwd);
-    // $password = hash_final($hash);
-    // $sql = "INSERT INTO `users` (role, username, password) 
-    //         VALUES ('$roles','$username','$password')";
-    // $conn->exec($sql);
-    // echo "New record added";
-
-
-    // DAVASKYE DEBIQUE'S DATABASE RECORD
-    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    // $roles = "admin";
-    // $username= "<your name here>";
-    // $pwd = "<password>";
-    // $hash = hash_init("sha1");
-    // hash_update($hash, $pwd);
-    // $password = hash_final($hash);
-    // $sql = "INSERT INTO `users` (role, username, password) 
-    //         VALUES ('$roles','$username','$password')";
-    // $conn->exec($sql);
-    // echo "New record added";
-
-
-
-    // DANIEL RICHARDSON'S DATABASE RECORD
-    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    // $roles = "admin";
-    // $username= "<your name here>";
-    // $pwd = "<password>";
-    // $hash = hash_init("sha1");
-    // hash_update($hash, $pwd);
-    // $password = hash_final($hash);
-    // $sql = "INSERT INTO `users` (role, username, password) 
-    //         VALUES ('$roles','$username','$password')";
-    // $conn->exec($sql);
-    // echo "New record added";
-
-
-    // SHEREKA SIMMONDS' DATABASE RECORD
-    // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    // $roles = "admin";
-    // $username= "<your name here>";
-    // $pwd = "<password>";
-    // $hash = hash_init("sha1");
-    // hash_update($hash, $pwd);
-    // $password = hash_final($hash);
-    // $sql = "INSERT INTO `users` (role, username, password) 
-    //         VALUES ('$roles','$username','$password')";
-    // $conn->exec($sql);
-    // echo "New record added";
-
-
-
-
-
+    if(isset($_GET['tax'], $_POST['tax'])){
+        if($_GET['tax'] == "GCT"){
+            session_start();
+            $_SESSION['tax'] = $_POST['tax'];
+            // echo $_SESSION['tax'];
+            header("Location:../HTMLFiles/admin-homepage.php");
+            exit();
+        }
+    }
     
 } catch (PDOException $e) {
     die($e->getMessage());

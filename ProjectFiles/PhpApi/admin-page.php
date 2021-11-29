@@ -125,7 +125,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
   <br>
   <h2>Create New User</h2>
   <div id="new-user-form">
-    <form action="../ProjectFiles/Javascripts/Main.js" method="post">
+    <form action="../Databases/database.php?user=new-user" method="post">
       <div id="input-fields">
         <label for="role">Role</label>
         <input type="settings-text" id="product-name" name="role" />
@@ -141,7 +141,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
   <br>
   <h2>Client Info</h2>
   <div id="client-info-form">
-    <form action="../ProjectFiles/Javascripts/Main.js" method="post">
+    <form action="../Databases/database.php?email=client-email" method="post">
       <div id="input-fields">
         <label for="client_email">Email</label>
         <input type="settings-text" id="c_email" name="client_email" />
@@ -155,7 +155,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
   <br>
   <h2>Tax Info</h2>
   <div id="tax-form">
-    <form action="../ProjectFiles/Javascripts/Main.js" method="post">
+    <form action="../Databases/database.php?tax=GCT" method="post">
       <div id="input-fields">
         <label for="tax">G.C.T</label>
         <input type="settings-text" id="tax" name="tax" />
@@ -183,25 +183,36 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $product_name = $_POST['product-name'];
       $quantity = $_POST['quantity'];
       $price = $_POST['price'];
-      $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-      $sql = "INSERT INTO `products`(supplier, product_name, quantity, price)
-              VALUES ('$supplier','$product_name','$quantity', '$price')";
+      $checker = $conn->query("SELECT * FROM `products` WHERE supplier= '$supplier' AND product_name= '$product_name'");
+      if (count($checker->fetchAll(PDO::FETCH_ASSOC)) == 0){
+
+        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+        $sql = "INSERT INTO `products`(supplier, product_name, quantity, price)
+                VALUES ('$supplier','$product_name','$quantity', '$price')";
+        
+        $conn->exec($sql);
+
+        $stmt= $conn->query("SELECT id FROM `products` WHERE supplier= '$supplier' AND product_name= '$product_name' AND quantity= '$quantity' AND price = '$price'");
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $id =  $results[0]['id'];
+
+        $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation, log_time)
+        VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Added', now())";
+
+        $conn->exec($update_tracker_sql);
+        echo "New record added!";
+        header("Location: ../HTMLFiles/admin-homepage.php");
+        exit();
+      }else{
+
+        header("Location: ../HTMLFiles/admin-homepage.php");
+        exit();
+      }
       
-      $conn->exec($sql);
 
-      $stmt= $conn->query("SELECT id FROM `products` WHERE supplier= '$supplier' AND product_name= '$product_name' AND quantity= '$quantity' AND price = '$price'");
-      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      $id =  $results[0]['id'];
-
-      $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation, log_time)
-      VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Added', now())";
-
-      $conn->exec($update_tracker_sql);
-      echo "New record added";
-
-      header("Location: ../HTMLFiles/admin-homepage.php");
-      exit();
+      
     }else if ($button == "submit-update"){
 
       $id = $_POST['id'];
