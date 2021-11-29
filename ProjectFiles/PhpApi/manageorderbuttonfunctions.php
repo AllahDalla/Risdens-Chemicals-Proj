@@ -30,18 +30,18 @@ if ($button == "place-order"){
       <h1>Incoming Orders</h1>
       <div id="scrollable-table">
         <table>
-          <th>
+          <thead>
             <tr>
-              <td>ID</td>
-              <td>Title</td>
-              <td>Customer Name</td>
-              <td>Telephone</td>
-              <td>Product Name</td>
-              <td>Quantity</td>
-              <td>Delivery Date</td>
-              <td>Transaction Time</td>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Customer Name</th>
+              <th>Telephone</th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Delivery Date</th>
+              <th>Transaction Time</th>
             </tr>
-          </th>
+          </thead>
           <tbody>
             <?php foreach($results as $row):?>
             <tr>
@@ -98,25 +98,25 @@ if ($button == "place-order"){
     <h1>RISDEN'S CHEMICALS ORDERS</h1>
     <div id="scrollable-table">
       <table>
-        <th>
+        <thead>
           <tr>
-            <td>ID</td>
-            <td>Order #</td>
-            <td>Title</td>
-            <td>Customer</td>
-            <td>Telephone #</td>
-            <td>Delivery Address</td>
-            <td>Product</td>
-            <td>Quantity</td>
-            <td>Price</td>
-            <td>Discount</td>
-            <td>Payment</td>
-            <td>Change</td>
-            <td>Delivery Date</td>
-            <td>Transaction Time</td>
+            <th>ID</th>
+            <th>Order #</th>
+            <th>Title</th>
+            <th>Customer</th>
+            <th>Telephone #</th>
+            <th>Delivery Address</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Payment</th>
+            <th>Change</th>
+            <th>Delivery Date</th>
+            <th>Transaction Time</th>
 
           </tr>
-        </th>
+        </thead>
         <tbody>
           <?php foreach($results as $row):?>
           <tr>
@@ -156,12 +156,16 @@ if ($button == "place-order"){
 }
 else if($button == "view-schedule"){
   ?>
-  <form action="../PhpApi/admin-page.php?schedule=yes" method="post">
-    <label for="date">Schedule Picker</label>
-    <input type="date" name="date" id="date" required>
-    <input type="submit" value="submit" id="submit-schedule-btn" required>
-  </form>
-
+  <div id="sked">
+    <form action="../PhpApi/admin-page.php?schedule=yes" method="post">
+      <div id="sked-date">
+        <label for="date">Choose a date below...</label>
+        <input type="date" name="date" id="date" required>
+      </div>
+        <input type="submit" value="submit" id="submit-schedule-btn" required>
+      
+    </form>
+  </div> 
 
 
 

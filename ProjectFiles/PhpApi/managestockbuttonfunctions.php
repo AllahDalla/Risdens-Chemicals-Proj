@@ -62,18 +62,18 @@ if ($button == "add"){
     <h1>RISDEN'S CHEMICALS STOCK LOGS</h1>
     <div id="scrollable-table">
       <table>
-        <th>
+        <thead>
           <tr>
-            <td>ID</td>
-            <td>Affected Product ID</td>
-            <td>Supplier</td>
-            <td>Product Name</td>
-            <td>Quantity</td>
-            <td>Price</td>
-            <td>Status</td>
-            <td>Time</td>
+            <th>ID</th>
+            <th>Affected Product ID</th>
+            <th>Supplier</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Time</th>
           </tr>
-        </th>
+        </thead>
         <tbody>
           <?php foreach($results as $row):?>
           <tr>

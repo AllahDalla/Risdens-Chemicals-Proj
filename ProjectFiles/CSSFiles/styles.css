@@ -28,6 +28,53 @@ body {
   margin: 0% 2.5%;
   padding-top: 00.5em;
 }
+/* Ramona was here */
+thead {
+  background: #395870;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background: #f0f0f2;
+}
+td {
+  border-bottom: 1px solid #cecfd5;
+  border-right: 1px solid #cecfd5;
+}
+
+td:first-child {
+  border-left: 1px solid #cecfd5;
+}
+
+#submit-schedule-btn{
+  width: 6rem;
+  height: 10%;
+  margin-top: 1em;
+  margin-left: 13em;
+  color: white;
+  background-color: #0c71e0;
+  font-family: Helvetica;
+  font-size: medium;
+
+  border-radius: 5px;
+}
+#sked{
+  border: 1px solid black;
+  position:relative;
+  background-color:rgb(176, 177, 194);
+  height: 10rem;
+  width: 20rem;
+  text-align: left;
+
+  margin-top:8%;
+  margin-left:15%;
+}
+#sked-date{
+  margin-top:10%;
+  margin-left:-19%;
+  text-align: left;
+} 
+/* Ramona left the chat */
 
 table {
   /* border: 0.1em solid black; */
@@ -45,7 +92,8 @@ tr,
 td,
 thead {
   text-align: center;
-  border: 0.2em solid #d3d3d3;
+
+  /* border: 0.2em solid #d3d3d3; */
 }
 
 #h2 {

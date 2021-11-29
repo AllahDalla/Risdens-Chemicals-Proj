@@ -38,15 +38,15 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       <h1>RISDEN'S CHEMICALS STOCK DATABASE</h1>
       <div id="scrollable-table">
         <table>
-          <th>
+          <thead>
             <tr>
-              <td>ID</td>
-              <td>Supplier</td>
-              <td>Product Name</td>
-              <td>Quantity</td>
-              <td>Price</td>
+              <th>ID</th>
+              <th>Supplier</th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
             </tr>
-          </th>
+          </thead>
           <tbody>
             <?php foreach($results as $row):?>
             <tr>
@@ -81,15 +81,15 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       <h1>RISDEN'S CHEMICALS ORDER MANAGER</h1>
       <div id="scrollable-table">
         <table>
-          <th>
+          <thead>
             <tr>
-              <td>ID</td>
-              <td>Supplier</td>
-              <td>Product Name</td>
-              <td>Quantity</td>
-              <td>Price</td>
+              <th>ID</th>
+              <th>Supplier</th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
             </tr>
-          </th>
+          </thead>
           <tbody>
             <?php foreach($results as $row):?>
             <tr>
@@ -292,19 +292,19 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
     <h2 id="h2"><?= scheduler($date);?></h2>
     <div id="scrollable-table">
       <table>
-        <th>
+        <thead>
           <tr>
-            <td>Title</td>
-            <td>Customer</td>
-            <td>Telephone #</td>
-            <td>Delivery Address</td>
-            <td>Product</td>
-            <td>Quantity</td>
-            <td>Price</td>
-            <td>Delivery Date</td>
-            <td>Transaction Time</td>
+            <th>Title</th>
+            <th>Customer</th>
+            <th>Telephone #</th>
+            <th>Delivery Address</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Delivery Date</th>
+            <th>Transaction Time</th>
           </tr>
-        </th>
+        </thead>
         <tbody>
           <?php foreach($results as $row):?>
           <tr>
