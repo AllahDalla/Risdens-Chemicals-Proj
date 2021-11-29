@@ -130,25 +130,36 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $product_name = $_POST['product-name'];
       $quantity = $_POST['quantity'];
       $price = $_POST['price'];
-      $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-      $sql = "INSERT INTO `products`(supplier, product_name, quantity, price)
-              VALUES ('$supplier','$product_name','$quantity', '$price')";
+      $checker = $conn->query("SELECT * FROM `products` WHERE product_name= '$product_name'");
+      if (count($checker->fetchAll(PDO::FETCH_ASSOC)) == 0){
+
+        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+        $sql = "INSERT INTO `products`(supplier, product_name, quantity, price)
+                VALUES ('$supplier','$product_name','$quantity', '$price')";
+        
+        $conn->exec($sql);
+
+        $stmt= $conn->query("SELECT id FROM `products` WHERE supplier= '$supplier' AND product_name= '$product_name' AND quantity= '$quantity' AND price = '$price'");
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $id =  $results[0]['id'];
+
+        $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation, log_time)
+        VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Added', now())";
+
+        $conn->exec($update_tracker_sql);
+        echo "New record added!";
+        header("Location: ../HTMLFiles/admin-homepage.php");
+        exit();
+      }else{
+
+        header("Location: ../HTMLFiles/admin-homepage.php");
+        exit();
+      }
       
-      $conn->exec($sql);
 
-      $stmt= $conn->query("SELECT id FROM `products` WHERE supplier= '$supplier' AND product_name= '$product_name' AND quantity= '$quantity' AND price = '$price'");
-      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      $id =  $results[0]['id'];
-
-      $update_tracker_sql = "INSERT INTO `logs`(product_id, changed_supplier, changed_product_name, changed_quantity, changed_price, operation, log_time)
-      VALUES ('$id','$supplier','$product_name','$quantity', '$price', 'Added', now())";
-
-      $conn->exec($update_tracker_sql);
-      echo "New record added";
-
-      header("Location: ../HTMLFiles/admin-homepage.php");
-      exit();
+      
     }else if ($button == "submit-update"){
 
       $id = $_POST['id'];

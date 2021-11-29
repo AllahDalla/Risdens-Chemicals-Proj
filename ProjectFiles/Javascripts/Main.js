@@ -160,11 +160,13 @@ function managestockButtonFunction(){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
 
+
                     //COLLECTING DATA TO INSERT INTO DATABASE FROM USER ADD STOCK FIELD
                     var submit = document.getElementById("submit-btn")
+
                     submit.addEventListener('click', async function(event){
                         sessionStorage.setItem("page", "1")
-                        alert("Record has been added")                  
+                        alert("Record has been added if the product name does not already exist.")             
                     })
 
                     return;
@@ -195,7 +197,8 @@ function managestockButtonFunction(){
                     
                     submit.addEventListener('click', async function(event){
                         sessionStorage.setItem("page", "1")
-                        alert("Record has been updated")                  
+                        alert("Record has been updated")
+                                          
                     })
 
                     return;
