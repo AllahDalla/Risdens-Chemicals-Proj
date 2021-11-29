@@ -91,8 +91,8 @@ try {
     // RAMONA STANBERRY'S DATABASE RECORD
     // $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     // $roles = "admin";
-    // $username= "<your name here>";
-    // $pwd = "<password>";
+    // $username= "RamonaStanberry";
+    // $pwd = "monac";
     // $hash = hash_init("sha1");
     // hash_update($hash, $pwd);
     // $password = hash_final($hash);
