@@ -1,7 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-=======
 session_start();
 
 if(isset($_SESSION['login'])){
@@ -10,7 +8,6 @@ if(isset($_SESSION['login'])){
   header("Location: ../HTMLFiles/staff-login.php");
   exit();
 }
->>>>>>> 7b428c0fed3fd6a82023241a1f235d0958f098a0
 
 include "../Databases/database.php";
 

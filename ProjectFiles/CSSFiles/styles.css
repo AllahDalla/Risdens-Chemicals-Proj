@@ -48,9 +48,6 @@ thead {
   border: 0.2em solid #d3d3d3;
 }
 
-<<<<<<< HEAD
-#result-area {
-=======
 #h2 {
   margin-left: 40%;
 }
@@ -75,7 +72,6 @@ thead {
   text-decoration: none;
   text-transform: none;
   color: #000000;
->>>>>>> 7b428c0fed3fd6a82023241a1f235d0958f098a0
   background-color: #ffffff;
 }
 #result-area label {
