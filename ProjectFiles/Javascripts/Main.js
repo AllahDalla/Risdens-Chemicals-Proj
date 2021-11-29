@@ -166,7 +166,7 @@ function managestockButtonFunction(){
 
                     submit.addEventListener('click', async function(event){
                         sessionStorage.setItem("page", "1")
-                        alert("Record has been added if the product name does not already exist.")             
+                        alert("Record has been added if the product name does not already exist from the same supplier.")             
                     })
 
                     return;

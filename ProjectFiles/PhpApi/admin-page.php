@@ -184,7 +184,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
       $quantity = $_POST['quantity'];
       $price = $_POST['price'];
 
-      $checker = $conn->query("SELECT * FROM `products` WHERE product_name= '$product_name'");
+      $checker = $conn->query("SELECT * FROM `products` WHERE supplier= '$supplier' AND product_name= '$product_name'");
       if (count($checker->fetchAll(PDO::FETCH_ASSOC)) == 0){
 
         $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
