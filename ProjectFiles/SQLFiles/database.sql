@@ -87,3 +87,21 @@ CREATE TABLE `incoming_orders` (
   `transaction_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `email`;
+CREATE TABLE `email` (
+  `id` int(11) NOT NULL auto_increment,
+  `email` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `gct`;
+CREATE TABLE `gct` (
+  `id` int(11) NOT NULL auto_increment,
+  `gct` varchar(64) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO `users` VALUES (1, 'admin', 'devTeam1', 'ae9030c665364eb2651d450e8321ae62dd51a726');

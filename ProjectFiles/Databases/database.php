@@ -95,11 +95,14 @@ try {
 
     if(isset($_GET['email'], $_POST['client_email'], $_POST['client_password'])){
         if($_GET['email'] == "client-email"){
-            session_start();
-            $_SESSION['email'] = $_POST['client_email'];
-            $_SESSION['password'] = $_POST['client_password'];
-            // echo $_SESSION['email'];
-            // echo $_SESSION['password'];
+            $email = $_POST['client_email'];
+            $pwd = $_POST['client_password'];
+            $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $sql = "INSERT INTO `email`(email, password)  
+                    VALUES ('$email','$password')";
+            $conn->exec($sql);
+            echo "New record updated";
+
             header("Location:../HTMLFiles/admin-homepage.php");
             exit();
             
@@ -109,12 +112,22 @@ try {
     if(isset($_GET['tax'], $_POST['tax'])){
         if($_GET['tax'] == "GCT"){
             session_start();
-            $_SESSION['tax'] = $_POST['tax'];
-            // echo $_SESSION['tax'];
+            $tax = $_POST['tax'];
+            $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $sql = "INSERT INTO `gct`(gct)  
+                    VALUES ('$tax')";
+            $conn->exec($sql);
+            echo "New record updated";
+
             header("Location:../HTMLFiles/admin-homepage.php");
             exit();
         }
     }
+    // $pwd = "password12345";
+    // $hash = hash_init("sha1");
+    // hash_update($hash, $pwd);
+    // $password = hash_final($hash);
+    // echo $password;
     
 } catch (PDOException $e) {
     die($e->getMessage());
