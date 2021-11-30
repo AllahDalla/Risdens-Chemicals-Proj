@@ -28,6 +28,7 @@ body {
   margin: 0% 2.5%;
   padding-top: 00.5em;
 }
+
 /* Ramona was here */
 thead {
   background: #395870;
@@ -770,4 +771,8 @@ input[type="settings-text"]{
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(142, 68, 173, 0);
   }
+}
+
+tr #whiterow{
+  color: white;
 }

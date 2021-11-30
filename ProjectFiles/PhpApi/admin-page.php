@@ -114,7 +114,58 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 
 <?php
 }else if($pageinfo == "financialreport"){
-    echo "Page is suppose to show here too. When we get it right, it shall be added in God's grace";
+    // echo "Page is suppose to show here too. When we get it right, it shall be added in God's grace";
+    $stmt = $conn->query("SELECT * FROM `transactions`
+                            WHERE id= '4080'");
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+
+    <h1>RISDEN'S CHEMICALS FINANCIAL REPORT</h1>
+    <div id="scrollable-table">
+      <table>
+        <thead>
+          <tr >
+            <th>Customer Name</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Payment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach($results as $row):?>
+          <tr>
+           
+            <td><?=$row['customer_name'];?></td>
+            <td><?=$row['product_name'];?></td>
+            <td><?=$row['quantity'];?></td>
+            <td><?="$".$row['price'];?></td>
+            <td><?=$row['delivery_date']?></td>
+          </tr> 
+          <?php endforeach;?>
+          <tr id="whiterow">
+            <td> fggth</td>
+            <td > fhrdgthh</td>
+            <td> bch</td>
+            <td> vjuk</td>
+            <td> fr</td>
+          </tr>
+
+          <tr >  
+            <td><b>Total Sales</b></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>50000</b></td>
+            
+          </tr>
+           
+        </tbody>
+      </table>
+    </div>
+    <?php
+    
+    // total sales, expenses, profit/loss
     
 }else if($pageinfo == "settings"){
   // echo "This is the page to add new users, passwords, change anything in the database etc page.";
