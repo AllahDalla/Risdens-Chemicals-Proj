@@ -47,7 +47,7 @@ td:first-child {
   border-left: 1px solid #cecfd5;
 }
 
-#submit-schedule-btn{
+#submit-schedule-btn {
   width: 6rem;
   height: 10%;
   margin-top: 1em;
@@ -59,22 +59,22 @@ td:first-child {
 
   border-radius: 5px;
 }
-#sked{
+#sked {
   border: 1px solid black;
-  position:relative;
-  background-color:rgb(176, 177, 194);
+  position: relative;
+  background-color: rgb(176, 177, 194);
   height: 10rem;
   width: 20rem;
   text-align: left;
 
-  margin-top:8%;
-  margin-left:15%;
+  margin-top: 8%;
+  margin-left: 15%;
 }
-#sked-date{
-  margin-top:10%;
-  margin-left:-19%;
+#sked-date {
+  margin-top: 10%;
+  margin-left: -19%;
   text-align: left;
-} 
+}
 /* Ramona left the chat */
 
 table {
@@ -475,59 +475,58 @@ input[type="date"] {
 }
 
 /* Settings CSS */
-h2{
+h2 {
   text-align: left;
 }
-#new-user-form{
+#new-user-form {
   border: 1px solid black;
-  position:relative;
-  background-color:rgb(176, 177, 194);
+  position: relative;
+  background-color: rgb(176, 177, 194);
   height: 17rem;
   width: 40rem;
   text-align: left;
 }
-#client-info-form{
+#client-info-form {
   border: 1px solid black;
-  position:relative;
-  background-color:rgb(176, 177, 194);
+  position: relative;
+  background-color: rgb(176, 177, 194);
   height: 13rem;
   width: 40rem;
   text-align: left;
 }
-#tax-form{
+#tax-form {
   border: 1px solid black;
-  position:relative;
-  background-color:rgb(176, 177, 194);
+  position: relative;
+  background-color: rgb(176, 177, 194);
   height: 9rem;
   width: 40rem;
   text-align: left;
 }
-input[type="settings-text"]{
+input[type="settings-text"] {
   width: 30rem;
   padding: 5px 10px;
   /* margin-top: 1%; */
   margin-bottom: 3%;
   margin-left: 5%;
 
-  font-size:100%;
+  font-size: 100%;
   font-family: "Times New Roman", Times, serif;
 }
-#input-fields{
+#input-fields {
   margin-top: 5%;
   width: 65%;
 }
-#user-submit-btn{
+#user-submit-btn {
   width: 7rem;
   height: 10%;
   margin-left: 80%;
-  color:white;
-  background-color:  #0c71e0;
+  color: white;
+  background-color: #0c71e0;
   font-family: Helvetica;
   font-size: medium;
 
-  border-radius:5px;
+  border-radius: 5px;
 }
-
 
 .active {
   animation: textColorChange 2s infinite;
@@ -773,6 +772,10 @@ input[type="settings-text"]{
   }
 }
 
-tr #whiterow{
-  color: white;
+#whiterow {
+  color: #f0f0f2;
+}
+
+.separate-table {
+  border-top: 2px solid black;
 }
