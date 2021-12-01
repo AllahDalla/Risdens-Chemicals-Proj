@@ -140,26 +140,38 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
             <td><?=$row['product_name'];?></td>
             <td><?=$row['quantity'];?></td>
             <td><?="$".$row['price'];?></td>
-            <td><?=$row['delivery_date']?></td>
+            <td><?=$row['payment']?></td>
           </tr> 
           <?php endforeach;?>
           <tr id="whiterow">
-            <td> fggth</td>
-            <td > fhrdgthh</td>
-            <td> bch</td>
-            <td> vjuk</td>
-            <td> fr</td>
+            <td>.</td>
+            <td >.</td>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
           </tr>
 
-          <tr >  
-            <td><b>Total Sales</b></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><b>50000</b></td>
-            
+          <tr>  
+            <td class="separate-table"><b>Total Sales</b></td>
+            <td class="separate-table"></td>
+            <td class="separate-table"></td>
+            <td class="separate-table"></td>
+            <td class="separate-table"><b>50000</b></td>
           </tr>
-           
+          <tr>  
+            <td><b>Total Expenditure</b></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>50000</b></td>  
+          </tr>
+          <tr>  
+            <td><b>Profit/Loss</b></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>20%</b></td>
+          </tr>
         </tbody>
       </table>
     </div>
