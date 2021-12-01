@@ -22,7 +22,9 @@ if ($button == "place-order"){
 
   $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
   $stmt = $conn->query($sql);
+  $products = $conn->query("SELECT product_name FROM `products`");
 
+  $product_results = $products->fetchAll(PDO::FETCH_ASSOC);
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>       
@@ -64,7 +66,13 @@ if ($button == "place-order"){
           action="../PhpApi/admin-page.php?insert=submit-place-order"
           method="post">
           <label for="title">Title</label>
-          <input type="text" id="title" name="title" />
+          <select id="title" name="title">
+            <option value ="Mr.">Mr.</option>
+            <option value ="Mrs.">Mrs.</option>
+            <option value ="Ms.">Ms.</option>
+            <option value ="Dr.">Dr.</option>
+            <option value ="Sir.">Sir.</option>
+          </select>
           <label for="customer-name">Customer Name</label>
           <input type="text" id="customer-name" name="customer-name" />
           <label for="tele">Telephone</label>
@@ -72,7 +80,13 @@ if ($button == "place-order"){
           <label for="address">Delivery Adress</label>
           <input type="text" id="address" name="address" />
           <label for="product-name">Product Name</label>
-          <input type="text" id="product-name" name="product-name" />
+
+          <select name="product-name" id="product-name">
+          <?php foreach($product_results as $product):?>
+            <option value=<?=$product['product_name'];?>><?=$product['product_name'];?></option>
+          <?php endforeach;?>
+          </select>
+
           <label for="quantity">Quantity</label>
           <input type="text" id="quantity" name="quantity" />
           <label for="price">Price</label>
