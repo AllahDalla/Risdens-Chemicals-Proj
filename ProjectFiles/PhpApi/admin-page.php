@@ -115,9 +115,10 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
 <?php
 }else if($pageinfo == "financialreport"){
     // echo "Page is suppose to show here too. When we get it right, it shall be added in God's grace";
-    $stmt = $conn->query("SELECT * FROM `transactions`
-                            WHERE id= '4080'");
+    $stmt = $conn->query("SELECT * FROM `transactions`");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $total_sales = 0;
+    $total_exp = 0;
     ?>
 
     <h1>RISDEN'S CHEMICALS FINANCIAL REPORT</h1>
@@ -134,6 +135,8 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
         </thead>
         <tbody>
           <?php foreach($results as $row):?>
+            <?php $total_sales += $row['price']; ?>
+            <?php // $total_exp += $row['price']; ?>
           <tr>
            
             <td><?=$row['customer_name'];?></td>
@@ -156,22 +159,9 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
             <td class="separate-table"></td>
             <td class="separate-table"></td>
             <td class="separate-table"></td>
-            <td class="separate-table"><b>50000</b></td>
+            <td class="separate-table"><b><?=$total_sales;?></b></td>
           </tr>
-          <tr>  
-            <td><b>Total Expenditure</b></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><b>50000</b></td>  
-          </tr>
-          <tr>  
-            <td><b>Profit/Loss</b></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><b>20%</b></td>
-          </tr>
+          
         </tbody>
       </table>
     </div>

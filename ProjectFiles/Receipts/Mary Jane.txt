@@ -1,0 +1,10 @@
+ORDER ID NUMBER : .................... 4084
+CUSTOMER NAME : Ms.Mary Jane
+PRODUCT NAME : Bleach
+QUANTITY OF PRODUCT : 2 gallons
+PRICE CHARGED : $500
+DISCOUNT : 0%
+PAYMENT : $1,000.00
+CHANGE : $-499.00
+DELIVERY DATE : 2021-12-03
+TRANSACTION TIME : ...................... December - 01 - 2021 - 11:33:46
