@@ -1,4 +1,4 @@
-body {
+.customer-body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   max-height: 100vh;
   margin: auto;
@@ -8,7 +8,7 @@ body {
   margin: 0% 2.5%;
   padding-top: 00.5em;
 }
-table{
+.table{
   border: 1px solid #000000;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 50%;
@@ -61,7 +61,7 @@ form{
 label{
   margin-left: 5%;
 }
-input[type="text"],input[type="date"]{
+input[type="cus-text"],input[type="cus-date"]{
   width: 30rem;
   padding: 5px 10px;
   margin-bottom: 3%;
@@ -73,7 +73,7 @@ input[type="text"],input[type="date"]{
   margin-top: 5%;
   width: 65%;
 }
-#submit-btn {
+#cus-submit-btn {
   width: 8rem;
   height: 2rem;
   margin-left: 4%;
@@ -82,6 +82,6 @@ input[type="text"],input[type="date"]{
   background-color: #0c71e0;
   font-family: Helvetica;
   font-size: medium;
-
+  border: 1px solid #0c71e0;
   border-radius: 5px;
 }
