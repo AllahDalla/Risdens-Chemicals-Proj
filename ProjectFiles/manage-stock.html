@@ -1,0 +1,56 @@
+<!-- This is where the page for manage stock is going to be developed -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../ProjectFiles/css/styles.css" />
+    <script src="app.js" type="text/javascript"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main">
+      <table>
+        <th>
+          <tr>
+            <td>ID</td>
+            <td>Product Name</td>
+            <td>Quantity</td>
+            <td>Price</td>
+          </tr>
+        </th>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Bleach</td>
+            <td>50Gallons</td>
+            <td>$120</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="stock-btn">
+        <button id="add-stock-btn">Add Stock</button>
+        <button id="update-stock-btn">Update Stock</button>
+        <button id="place-order-btn">Place Order</button>
+      </div>
+      <!-- This is where the things will come up when each button is clicked -->
+      <div id="result">
+        <form
+          action="../ProjectFiles/Javascripts/SidebarButtons.js"
+          method="post"
+        >
+          <!-- <label for="id">ID</label>
+          <input type="text" id="id" name="id" /> -->
+          <label for="product-name">Product Name</label>
+          <input type="text" id="product-name" name="product-name" />
+          <label for="quantity">Quantity</label>
+          <input type="text" id="quantity" name="quantity" />
+          <label for="price">Price</label>
+          <input type="text" id="price" name="price" />
+          <input type="submit" id="submit-btn" value="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

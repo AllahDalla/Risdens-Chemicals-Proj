@@ -1,0 +1,10 @@
+ORDER ID NUMBER : .................... 4083
+CUSTOMER NAME : Mr.Joshua Banks
+PRODUCT NAME : Bleach
+QUANTITY OF PRODUCT : 100 gallons
+PRICE CHARGED : $1
+DISCOUNT : 10%
+PAYMENT : $200.00
+CHANGE : $199.10
+DELIVERY DATE : 2021-12-03
+TRANSACTION TIME : ...................... December - 01 - 2021 - 11:08:34

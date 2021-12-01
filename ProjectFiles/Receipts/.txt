@@ -1,0 +1,10 @@
+ORDER ID NUMBER : .................... 5
+CUSTOMER NAME : 
+PRODUCT NAME : 
+QUANTITY OF PRODUCT :  gallons
+PRICE CHARGED : $
+DISCOUNT : %
+PAYMENT : $6,000.00
+CHANGE : $6.00
+DELIVERY DATE : 
+TRANSACTION TIME : ...................... December - 01 - 2021 - 11:37:24
