@@ -1,49 +1,87 @@
-html{
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-height: 100vh;
+  margin: auto;
   background: #90DBE5;
 }
-.cus_title{
-  background-color: #92a8d1;
-  color: #FFFFFF;
-  font-family: Roboto;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: normal;
-  height: 54px;
-  left: 250px;
-  letter-spacing: 0.105em;
-  line-height: 42px;
-  position: absolute;
-  text-align: center;
-  top: 1px;
-  width: 936px;
+#main-info {
+  margin: 0% 2.5%;
+  padding-top: 00.5em;
 }
 table{
-  background: #FFFFFF;
   border: 1px solid #000000;
-  bottom: 33.01%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  left: 24%;
-  position: absolute;
-  right: 7.36%;
-  top: 19%;  
-  width: 700px;
+  width: 50%;
+  margin-left: 28%;
+  border-collapse: collapse;
 }
+h1{
+  font-size: 30px;
+  text-align: center;
+}
+tr, td, thead,th {
+  text-align: center;
+  border: 1px solid black; 
+
+}
+caption,thead{
+  background: #395870;
+  color: #fff;
+}
+caption{
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding-top: 5px;
+  height: 25px;
+  font-style: italic;
+  font-weight: bold;
+}
+tbody {
+  background: #f0f0f2;
+}
+.product-name, .price{
+  width: 30%;
+}
+
 form{
   color: #000000;
   font-family: Roboto;
   font-size: 19px;
   font-style: normal;
   font-weight: normal;
-  height: 10px;
-  left: 40%;
-  letter-spacing: 0.105em;
-  line-height: 42px;
-  position: absolute;
-  top: 260px;
-  width: 300px;
 }
-input{
-  border: 2px solid #000000;
-  position: absolute;
+#order-form{
+  margin-top: 3%;
+  padding-bottom: 5%;
+  margin-left: 15%;
+  height:50%;
+  width: 60%;
+}
+label{
+  margin-left: 5%;
+}
+input[type="text"],input[type="date"]{
+  width: 30rem;
+  padding: 5px 10px;
+  margin-bottom: 3%;
+  margin-left: 5%;
+  font-size:100%;
+  font-family: "Times New Roman", Times, serif;
+}
+#input-fields{
+  margin-top: 5%;
+  width: 65%;
+}
+#submit-btn {
+  width: 8rem;
+  height: 2rem;
+  margin-left: 4%;
+  margin-top:5%;
+  color: white;
+  background-color: #0c71e0;
+  font-family: Helvetica;
+  font-size: medium;
+
+  border-radius: 5px;
 }
