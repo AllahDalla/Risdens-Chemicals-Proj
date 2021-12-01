@@ -37,16 +37,16 @@ DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE `transactions` (
   `id` int(11) NOT NULL auto_increment,
   `order_number` varchar(64) NOT NULL default '',
-  `title` varchar(64) NOT NULL,
-  `customer_name` varchar(64) NOT NULL,
-  `telephone` char(50) NOT NULL,
-  `delivery_address` varchar(128) NOT NULL,
-  `product_name` varchar(64) NOT NULL,
-  `quantity` int(40) NOT NULL,
-  `price` int(40) NOT NULL,
-  `discount` int(20) NOT NULL,
-  `payment` int(20) NULL,
-  `change` int(20) NULL,
+  `title` varchar(64) NOT NULL default '',
+  `customer_name` varchar(64) NOT NULL default '',
+  `telephone` char(50) NOT NULL  default '',
+  `delivery_address` varchar(128) NOT NULL default '',
+  `product_name` varchar(64) NOT NULL default '',
+  `quantity` int(40) NOT NULL default '0',
+  `price` varchar(40) NOT NULL default '',
+  `discount` varchar(20) NOT NULL default '0',
+  `payment` varchar(20) NULL default '',
+  `change` varchar(20) NULL default '',
   `delivery_date` date NOT NULL,
   `transaction_time` datetime NOT NULL,
   PRIMARY KEY  (`id`)
@@ -77,11 +77,11 @@ CREATE TABLE `logs` (
 DROP TABLE IF EXISTS `incoming_orders`;
 CREATE TABLE `incoming_orders` (
   `id` int(11) NOT NULL auto_increment,
-  `title` varchar(64) NOT NULL,
-  `customer_name` varchar(64) NOT NULL,
-  `telephone` char(50) NOT NULL,
-  `delivery_address` varchar(128) NOT NULL,
-  `product_name` varchar(64) NOT NULL,
+  `title` varchar(64) NOT NULL default '',
+  `customer_name` varchar(64) NOT NULL default '',
+  `telephone` char(50) NOT NULL default '',
+  `delivery_address` varchar(128) NOT NULL default '',
+  `product_name` varchar(64) NOT NULL default '',
   `quantity` int(40) NOT NULL,
   `delivery_date` date NOT NULL,
   `transaction_time` datetime NOT NULL,
@@ -91,15 +91,15 @@ CREATE TABLE `incoming_orders` (
 DROP TABLE IF EXISTS `email`;
 CREATE TABLE `email` (
   `id` int(11) NOT NULL auto_increment,
-  `email` varchar(64) NOT NULL,
-  `password` varchar(64) NOT NULL,
+  `email` varchar(64) NOT NULL default '',
+  `password` varchar(64) NOT NULL default '',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `gct`;
 CREATE TABLE `gct` (
   `id` int(11) NOT NULL auto_increment,
-  `gct` varchar(64) NOT NULL,
+  `gct` varchar(64) NOT NULL default '',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 

@@ -12,7 +12,7 @@
       <h1>WELCOME TO RISDEN'S CHEMICALS</h1>
       
       
-      <table class="table">
+      < class="table">
         <caption>List of Items in Stock</caption>
         <thead>
            <tr>

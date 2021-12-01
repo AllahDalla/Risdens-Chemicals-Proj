@@ -142,7 +142,7 @@ if ($button == "place-order"){
             <td><?=$row['delivery_address'];?></td>
             <td><?=$row['product_name'];?></td>
             <td><?=$row['quantity'];?></td>
-            <td><?="$".$row['price'];?></td>
+            <td><?=$row['price'];?></td>
             <td><?=$row['discount']."%";?></td>
             <td><?=$row['payment']?></td>
             <td><?=$row['change']?></td>
@@ -154,14 +154,12 @@ if ($button == "place-order"){
       </table>
     </div>
   <form
-    action="../PhpApi/Email.php?email=send-mail"
+    action="../PhpApi/GenerateReceipt.php?receipt=customer-receipt"
     method="post">
     <label for="id">ID</label>
     <input type="text" id="id" name="id" required/>
     <label for="id">Payment</label>
     <input type="text" id="payment" name="payment" required/>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" palceholder="someone@gmail.com" required/>
     <input type="submit" id="submit-btn" value="submit" />
   </form>
   </div>

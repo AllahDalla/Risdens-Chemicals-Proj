@@ -280,6 +280,14 @@ function manageOrderButtonFunction(){
                 if(response.ok){
                     var input_field = await response.text()
                     result.innerHTML = ""+input_field
+
+                    var submit = document.getElementById("submit-btn")
+                    submit.addEventListener('click', async function(event){
+                        sessionStorage.setItem("page","2");
+                        alert("Receipt has been generated")                  
+                    })
+
+
                     return;
 
                 }else{

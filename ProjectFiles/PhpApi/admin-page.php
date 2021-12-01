@@ -139,7 +139,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
             <td><?=$row['customer_name'];?></td>
             <td><?=$row['product_name'];?></td>
             <td><?=$row['quantity'];?></td>
-            <td><?="$".$row['price'];?></td>
+            <td><?=$row['price'];?></td>
             <td><?=$row['payment']?></td>
           </tr> 
           <?php endforeach;?>
@@ -388,7 +388,7 @@ if($pageinfo == "managestock"){ //checks to see which page is being requested to
             <td><?=$row['delivery_address'];?></td>
             <td><?=$row['product_name'];?></td>
             <td><?=$row['quantity'];?></td>
-            <td><?="$".$row['price'];?></td>
+            <td><?=$row['price'];?></td>
             <td><?=$row['delivery_date']?></td>
             <td><?=$row['transaction_time']?></td>
           </tr>
